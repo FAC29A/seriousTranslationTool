@@ -1,2 +1,7 @@
 # very-sensible-unspecified-app
-Content TBD. Skill TBD. Relevance TBD.
+
+- [ ] Decide sensible topic
+- [ ] Reject previous idea and choose fun topic
+- [ ] Panic
+- [ ] Code frantically
+- [ ] Profit
