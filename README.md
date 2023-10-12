@@ -1,6 +1,6 @@
 # Very Sensible Unspecified App
 
-## To Do
+## 1 To Do
 
 - [ ] Decide sensible topic
 - [ ] Reject previous idea and choose fun topic
@@ -8,15 +8,17 @@
 - [ ] Code frantically
 - [ ] Profit
 
-## Jason's Think Hole
+---
 
-### 1 The Idea
+## 2 Jason's Think Hole
 
-#### 1.1 Theme
+### 2A The Idea
 
-##### 1.1.1 Seeds
+#### 2A1 Theme
 
-###### 1.1.1.1 Me Likey
+##### 2A1A Seeds
+
+###### 2A1A1 Me Likey
 
 - [ ] Which god you should worship based on your values/ethical beliefs
 - [ ] Correlations between:
@@ -31,7 +33,7 @@
 	- Define how old they were at the time
 	- App displays what other events they experienced in their lifetime
 
-###### 1.1.1.2 Maybe
+###### 2A1A2 Maybe
 
 - [ ] Enter how you want to insult someone. Return an idiom translated from another language
 - [ ] Who was the first recorded named person from your town
@@ -42,41 +44,66 @@
 - [ ] Kinship terms within a language correlated with expressed attitudes towards social norms
 	- [ ] Could go a little bit too Sapir-Whorf
 
-###### 1.1.1.3 Absolutely Not
+###### 2A1A3 Absolutely Not
 
 - [ ] Quotes from religious texts to help you justify horrible shit you want to do
 - [ ] Could Genghis Khan beat up a shark?
 - [ ] Analyse the emotional tone & sentiment of text, but the analysis is really judgemental
 
-###### Inbox
+###### 2A1A4 Inbox
 
 - [ ] Politician Dewaffler
 - [ ] Venn Diagram Generator of Obscure Musical Subgenres (wat iz a vaporwave)
 - [ ] Right Wing Catastrophism Analyser
+- [ ] Awful Hot Take Generator
+- [ ] Word Expander
+	- Apply pre-existing affixes to any word in order to convey new meaning
+	- Possibly separately input desired extra meaning not conveyed by root word
+	- Possibly can weight likelihood of older or newer affixes to convey sense of when word was coined
+	- e.g. adjectival form of politician, add connotation of "fool", skew towards Middle English affixes
+- [ ] Last time a newspaper printed a given slur word without quotation marks. Maybe correlated with attitudes towards current social issues?
+- [ ] Uncomfortable Recommendations
+- [ ] Weird Shit Your Country Believes
 
-#### 1.2 Usage Ideas
+---
 
-##### 1.2.1 Input
+### 2B Usage Ideas
+
+#### 2B1 Input
 
 > What gets fed into the app?
 
-###### 1.2.1.1 What Does the User Do?
+##### 2B1A What Does the User Do?
 
 - Press a button?
 - Type a value that is sent to one API?
 - Type a value that is sent to all APIs?
 - Chooses a value from a list given by an API?
 
-##### 1.2.2 Output
+#### 2B2 Output
 
 > What does the app spit out?
 
-###### 1.2.2.1 Relationship Between Data
+##### 2B2A Relationship Between Data
 
-###### 1.2.2.2 Format
+> yis?
 
-#### 1.3 Method
+##### 2B2B Format
 
-##### 1.3.1 Request Format
+> wat iz
 
-#### 1.4 Interesting APIs
+---
+### 2C Method
+
+> hao do?
+
+#### 2C1 Request Format
+
+> yis?
+
+---
+### 2D Interesting APIs
+
+> yis
+
+---
