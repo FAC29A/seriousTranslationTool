@@ -13,7 +13,7 @@
   //Get User Input
 
   //Get Stuff from API
-    async function pullFromAPI(api, method, contentType, requestBody) {
+    async function pullFromAPI(api, method, contentType, requestBody, targetDiv) {
       const response = await fetch(`${api}`, {
         method: `${method}`,
         headers: {
@@ -28,29 +28,24 @@
 
       // .then(response => response.json())
       // .then(let result = (response.contents.translated))
-      return resultText;
+      pushToPage(resultText, targetDiv);
     }
 
   //Put Stuff on Page
     async function pushToPage(content, box) {
       //Original Version: const resultText = document.createElement(`p`);
-      const resultText = await retrieveResult("POST", shakespeare, "text", content);
-      
       const resultParagraph = document.createElement("p");
       resultParagraph.className = "dummyClass";
-      resultParagraph.append(resultText);
+
+      resultParagraph.append(content);
       
       box.append(resultParagraph);
-
-      resultText.append(content);
-
-      box.append(resultText);
     }
 
 //Testbed
   //Function Calls
     //Shakespeare in Result 1
-      pushToPage(pullFromAPI("POST", shakespeare, "text", "this is an example translation"), container1);
+      pullFromAPI(shakespeare, "POST", "text", "this is an example translation", container1);
     
     //Dummy Content in Result 2
       pushToPage(dummyContent, container2);
