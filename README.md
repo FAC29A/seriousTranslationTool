@@ -1,5 +1,32 @@
 # Very Sensible Unspecified App
 
+<details>
+	<summary>Table of Contents</summary>
+	
+	- [To Do](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#to-do)
+	- [Usage](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#usage)
+		- [Possible Processes](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#possible-processes)
+		- [Input](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#input)
+		- [Output](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#output)
+	- [Jason's Think Hole](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#jasons-think-hole)
+		- [Themes](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#theme-ideas)
+			- [Ideas I Like](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#ideas-i-like)
+			- [Ideas That Are Fine](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#meh)
+			- [Ideas I Apologise For](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#wtf)
+			- [Not Actually Ideas](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#ffs)
+		- [APIs](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#interesting-apis)
+			- [Generic](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#generic)
+			- [Actual Data](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#actual-data)
+			- [Niche](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#niche)
+			- [Silly](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#silly)
+			- [Formatting](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#formatting)
+
+</details>
+
+
+
+---
+
 ## To Do
 
 - [ ] Decide sensible topic
@@ -10,25 +37,28 @@
 
 ---
 
-## Usage & Method
+## Usage
 
 ### Possible Processes
 
-```mermaid
-graph TB
-subgraph key["Key"]
-direction TB
+<details>
+	<summary>Diagram</summary>
+	
+	```mermaid
+	graph TB
+	subgraph key["Key"]
+	direction TB
 	userInput[/"User Input"\]:::userInput
 	userOutput[\"Displayed Output"/]:::userOutput
 	codeInput[["API Request"]]:::codeInput
 	codeFormat[("Back-End JavaScript")]:::codeFormat
 	codeOutput>"API Result"]:::codeOutput
-end
-
-key ~~~ processA & processB
-
-subgraph processA["Simultaneous Process"]
-direction TB
+	end
+	
+	key ~~~ processA & processB
+	
+	subgraph processA["Simultaneous Process"]
+	direction TB
 	inputA[/"User Does a Thing"\]:::userInput
 	requestA1[["Make a Request from API 1"]]:::codeInput
 	resultA1>"API 1 Returns Something"]:::codeOutput
@@ -44,10 +74,10 @@ direction TB
 	resultA1 & resultA2 --> mergeA
 	mergeA --> formatA
 	formatA --> outputA
-end
-
-subgraph processB["Sequential Process"]
-direction TB
+	end
+	
+	subgraph processB["Sequential Process"]
+	direction TB
 	inputB[/"User Does a Thing"\]:::userInput
 	requestB1[["Make a Request from API 1"]]:::codeInput
 	resultB1>"API 1 Returns Something"]:::codeOutput
@@ -64,23 +94,27 @@ direction TB
 	requestB2 --> resultB2
 	resultB2 --> formatB
 	formatB --> outputB
-end
+	end
+	
+	classDef userInput fill:#bfbfff
+	classDef userOutput fill:#bfbfff
+	classDef codeInput fill:#ffbfbf
+	classDef codeFormat fill:#ffffbf
+	classDef codeOutput fill:#bfffbf
+	```
+ 
+</details>
 
-classDef userInput fill:#bfbfff
-classDef userOutput fill:#bfbfff
-classDef codeInput fill:#ffbfbf
-classDef codeFormat fill:#ffffbf
-classDef codeOutput fill:#bfffbf
-```
-
-#### Input: What Does the User Do?
+#### Input
+> What Does the User Do?
 
 - Press a button?
 - Type a value that is sent to one API?
 - Type a value that is sent to all APIs?
 - Chooses a value from a list given by an API?
 
-#### Output: What does the app spit out?
+#### Output
+> What does the app spit out?
 
 - Relationship Between Data
 - Display Format
@@ -92,6 +126,7 @@ classDef codeOutput fill:#bfffbf
 ### Theme Ideas
 
 #### Ideas I Like
+> Me Likey
 
 - **Mythos**
 	- Which god you should worship based on your values/ethical beliefs
@@ -117,7 +152,8 @@ classDef codeOutput fill:#bfffbf
 	- Possibly can weight likelihood of older or newer affixes to convey sense of when word was coined
 	- e.g. adjectival form of politician, add connotation of "fool", skew towards Middle English affixes
 
-#### Ideas That Are... Fine?
+#### Meh
+> Ideas That Are... Fine?
 
 - Creative Insult Idomiser
 	- Enter how you want to insult someone. Return an idiom translated from another language
@@ -135,21 +171,20 @@ classDef codeOutput fill:#bfffbf
 - Family Term Attitude Extrapolator
 	- Kinship terms within a language correlated with expressed attitudes towards social norms
 	- Could go a little bit too Sapir-Whorf
-
-### Tolerable Ideas With APIs Researcher
-
 - [Genderize](https://genderize.io/), [Nationalize](https://nationalize.io/) & [Agify](https://agify.io/) predict someone's gender, nationality & gender based on their name.
 	- We could serve someone the most polar opposite name possible...
 	- Or the most average name someone of their demographic could have?
 
-#### Ideas I Should Never Have Thought Up
+#### WTF?
+> Ideas I Should Never Have Thought Up
 
 - Quotes from religious texts to help you justify horrible shit you want to do
 - Could Genghis Khan beat up a shark?
 - Analyse the emotional tone & sentiment of text, but the analysis is really judgemental
 - Weird Shit Your Country Believes
 
-#### This Isn't an Idea Jason, It's Just a Funny Sentence You Thought Of
+#### FFS
+> This Isn't an Idea Jason, It's Just a Funny Sentence You Thought Of
 
 - Right Wing Catastrophism Analyser
 - Awful Hot Take Generator
@@ -159,7 +194,8 @@ classDef codeOutput fill:#bfffbf
 
 ### Interesting APIs
 
-#### Generic APIs to Plug Into Other Ideas
+#### Generic
+> APIs to Plug Into Other Ideas
 
 - [ColorMind](http://colormind.io/api-access/): Colour Palette Generation & Editing
 - [Deck of Cards](https://deckofcardsapi.com/)
@@ -171,7 +207,7 @@ classDef codeOutput fill:#bfffbf
 - [Urban Observatory](https://newcastle.urbanobservatory.ac.uk/): UK Urban Data
 - [Wikipedia](https://www.mediawiki.org/wiki/API)
 
-#### Niche Stuff
+#### Niche
 
 - [BoardGameGeek](https://boardgamegeek.com/wiki/page/BGG_XML_API2?ref=apislist.com)
 - [Cognosaurus](https://github.com/JohnLapis/cognosaurus): Find cognates
@@ -181,14 +217,16 @@ classDef codeOutput fill:#bfffbf
 - [PoetryDB](https://github.com/thundercomb/poetrydb)
 - [Traitify](https://app.traitify.com/developer): Personality Tests
 
-#### Silly Generators & the Like
+#### Silly
+> Generators & the Like
 
 - [Binary Jazz](https://binaryjazz.us/genrenator-api/): Music Genre Generator
 - [Bored](https://www.boredapi.com/): Random Activities
 - [Corporate Bullshit Generator](https://github.com/sameerkumar18/corporate-bs-generator-api)
 - [RPS-101](https://rps101.pythonanywhere.com/api?ref=apislist.com): Rock, Paper, Scissors with 101 Objects
 
-#### APIs That Format Other Data
+#### Formatting
+> APIs That Format Other Data
 
 - [GitHub Contributions Chart Generator](https://github-contributions.vercel.app/)
 - [ImageCharts](https://documentation.image-charts.com/): Present data in a variety of chart types
