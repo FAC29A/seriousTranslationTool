@@ -1,32 +1,5 @@
 # Very Sensible Unspecified App
 
-<details>
-	<summary>Table of Contents</summary>
-	
-	- [To Do](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#to-do)
-	- [Usage](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#usage)
-		- [Possible Processes](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#possible-processes)
-		- [Input](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#input)
-		- [Output](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#output)
-	- [Jason's Think Hole](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#jasons-think-hole)
-		- [Themes](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#theme-ideas)
-			- [Ideas I Like](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#ideas-i-like)
-			- [Ideas That Are Fine](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#meh)
-			- [Ideas I Apologise For](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#wtf)
-			- [Not Actually Ideas](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#ffs)
-		- [APIs](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#interesting-apis)
-			- [Generic](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#generic)
-			- [Actual Data](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#actual-data)
-			- [Niche](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#niche)
-			- [Silly](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#silly)
-			- [Formatting](https://github.com/FAC29A/very-sensible-unspecified-app/edit/main/README.md#formatting)
-
-</details>
-
-
-
----
-
 ## To Do
 
 - [ ] Decide sensible topic
