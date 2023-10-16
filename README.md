@@ -16,40 +16,60 @@
 
 ```mermaid
 graph TB
+subgraph key["Key"]
+direction TB
+	userInput[/"User Input"\]:::userInput
+	userOutput[\"Displayed Output"/]:::userOutput
+	codeInput[["API Request"]]:::codeInput
+	codeFormat[("Back-End JavaScript")]:::codeFormat
+	codeOutput>"API Result"]:::codeOutput
+end
+
+key ~~~ processA & processB
+
 subgraph processA["Simultaneous Process"]
 direction TB
-	inputA{"User Does a Thing"}:::userInput
-	requestA1(["Make a Request from API 1"]):::codeInput
-	resultA1["API 1 Returns Something"]:::codeOutput
-	requestA2(["Make a Request from API 2"]):::codeInput
-	resultA2["API 2 Returns Something"]:::codeOutput
-	outputA["Something is Displayed to the User"]:::userOutput
+	inputA[/"User Does a Thing"\]:::userInput
+	requestA1[["Make a Request from API 1"]]:::codeInput
+	resultA1>"API 1 Returns Something"]:::codeOutput
+	requestA2[["Make a Request from API 2"]]:::codeInput
+	resultA2>"API 2 Returns Something"]:::codeOutput
+	mergeA[("Merge Results")]:::codeFormat
+	formatA[("Format Results")]:::codeFormat
+	outputA[\"Something is Displayed to the User"/]:::userOutput
 	
 	inputA --> requestA1 & requestA2
 	requestA1 --> resultA1
 	requestA2 --> resultA2
-	resultA1 & resultA2 --> outputA
+	resultA1 & resultA2 --> mergeA
+	mergeA --> formatA
+	formatA --> outputA
 end
 
 subgraph processB["Sequential Process"]
 direction TB
-	inputB{"User Does a Thing"}:::userInput
-	requestB1(["Make a Request from API 1"]):::codeInput
-	resultB1["API 1 Returns Something"]:::codeOutput
-	requestB2(["API 1's Result Generates a Request from API 2"]):::codeInput
-	resultB2["API 2 Returns Something"]:::codeOutput
-	outputB["Something is Displayed to the User"]:::userOutput
+	inputB[/"User Does a Thing"\]:::userInput
+	requestB1[["Make a Request from API 1"]]:::codeInput
+	resultB1>"API 1 Returns Something"]:::codeOutput
+	generateB2[("Generate Request from Result")]:::codeFormat
+	requestB2[["Make a Request from API 2"]]:::codeInput
+	resultB2>"API 2 Returns Something"]:::codeOutput
+	formatB[("Format Results")]:::codeFormat
+	outputB[\"Something is Displayed to the User"/]:::userOutput
 	
 	inputB --> requestB1
 	requestB1 --> resultB1
-	resultB1 --> requestB2
+	resultB1 --> generateB2
+	generateB2 --> requestB2
 	requestB2 --> resultB2
-	resultB2 --> outputB
+	resultB2 --> formatB
+	formatB --> outputB
 end
 
 classDef userInput fill:#bfbfff
 classDef userOutput fill:#bfbfff
 classDef codeInput fill:#ffbfbf
+classDef codeFormat fill:#ffffbf
 classDef codeOutput fill:#bfffbf
 ```
 
