@@ -1,43 +1,56 @@
-const dummyContent = "stuff";
-const shakespeareURL = ("https://api.funtranslations.com/translate/shakespeare.json")
+//Dummy Variables
+  const dummyContent = "stuff";
 
+//API Sources
+  const host = "api.funtranslations.com";
+  const shakespeare = ("https://api.funtranslations.com/translate/shakespeare.json");
 
-const result1Container = document.getElementById("translation1Container");
-const result2Container = document.getElementById("translation2Container");
+//HTML Elements
+  const container1 = document.getElementById("result1Box");
+  const container2 = document.getElementById("result2Box");
 
-function pullFromAPI(){
-  
-}
+//Functions
+  //Get User Input
 
-function pushToPage(content, container) {
-  const resultText = document.createElement(`p`);
-  resultText.className = "dummyClass";
+  //Get Stuff from API
+    async function pullFromAPI(api, method, contentType, requestBody) {
+      const response = await fetch(`${api}`, {
+        method: `${method}`,
+        headers: {
+          "Content-Type": `${contentType}`,
+          "Host": `${host}`,
+        },
+        body: JSON.stringify(`${requestBody}`)
+      })
+    
+      const resultObject = await response.json();
+      const resultText = resultObject.contents.translated;
 
-  resultText.append(content);
+      // .then(response => response.json())
+      // .then(let result = (response.contents.translated))
+      return resultText;
+    }
 
-  container.append(resultText);
-}
+  //Put Stuff on Page
+    async function pushToPage(content, box) {
+      //Original Version: const resultText = document.createElement(`p`);
+      const resultText = await retrieveResult("POST", shakespeare, "text", content);
+      
+      const resultParagraph = document.createElement("p");
+      resultParagraph.className = "dummyClass";
+      resultParagraph.append(resultText);
+      
+      box.append(resultParagraph);
 
+      resultText.append(content);
 
+      box.append(resultText);
+    }
 
-
-
-async function retrieveResult (method, url, contentType, requestBody) {
-  const response = await fetch(`${url}`, {
-  method: `${method}`,
-  headers: {
-    // "Content-Type": `${contentType}`
-    "Host": "api.funtranslations.com"
-  },
-  body: JSON.stringify(`${requestBody}`)
- })
-  
- const resultObject = await response.json();
- const resultText = resultObject.contents.translated;
-  // .then(response => response.json())
-  // .then(let result = (response.contents.translated))
-  return resultText;
-}
-
-pushToPage(retrieveResult("POST", shakespeareURL, "text", "this is an example translation"), result1Container);
-pushToPage(dummyContent, result2Container);
+//Testbed
+  //Function Calls
+    //Shakespeare in Result 1
+      pushToPage(pullFromAPI("POST", shakespeare, "text", "this is an example translation"), container1);
+    
+    //Dummy Content in Result 2
+      pushToPage(dummyContent, container2);
