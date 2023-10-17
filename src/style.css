@@ -1,3 +1,10 @@
+/* Utility Classes */
+
+.center {
+    text-align: center;
+}
+
+
 /* DEBUG TOOLS */
     * {
         margin: 10px;
