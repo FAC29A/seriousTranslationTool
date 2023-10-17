@@ -26,8 +26,6 @@ Text go in, other text go out
 ### Help the reader identify the project 
 
 - [x] Name the file
-  - *READMEs without markup:* Name the file `README` or `README.txt`. 
-  - *READMEs with markup:* Name the file `README.extension`, where *extension* is a file extension that corresponds to your markup language (such as md for Markdown or rst for reStructuredText). 
 - [x] At the top of the file, **make sure the project's name is the first heading or plain text**. 
 - [ ] Under the project name or linked from it, add a URL for the project (such as repository or homepage URL). 
 - [ ] Under the project name, clearly identify the owner or author of the project (e.g., "By Author McAuthorface" or "Copyright Owner Name 2018"). 
