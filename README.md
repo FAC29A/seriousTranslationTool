@@ -114,11 +114,9 @@ Text go in, other text go out
 
 ## Jason's Think Hole
 
-### Usage
+### Usage Diagrams
 
-#### Diagrams
-
-##### Key
+#### Key
 
 ```mermaid
 graph TB
@@ -141,9 +139,7 @@ classDef codeFormat fill:#ffffbf
 classDef codeOutput fill:#bfffbf
 ```
 
-##### Initial Ideas
-
-###### Simultaneous
+#### Initial Idea 1: Simultaneous
 
 ```mermaid
 graph TB
@@ -171,7 +167,7 @@ classDef codeFormat fill:#ffffbf
 classDef codeOutput fill:#bfffbf
 ```
 
-###### Sequential
+#### Initial Idea 2: Sequential
 
 ```mermaid
 graph TB
