@@ -119,157 +119,157 @@ Text go in, other text go out
 #### Key
 
 ```mermaid
-graph TB
+  graph TB
 
-userInput[/"User Input"\]:::userInput
-userOutput[\"Displayed Output"/]:::userOutput
-codeInput[["API Request"]]:::codeInput
-codeFormat[("Back-End JavaScript")]:::codeFormat
-codeOutput>"API Result"]:::codeOutput
+  userInput[/"User Input"\]:::userInput
+  userOutput[\"Displayed Output"/]:::userOutput
+  codeInput[["API Request"]]:::codeInput
+  codeFormat[("Back-End JavaScript")]:::codeFormat
+  codeOutput>"API Result"]:::codeOutput
 
-userInput --- codeInput
-codeInput --- codeFormat
-codeFormat --- codeOutput
-codeOutput --- userOutput
+  userInput --- codeInput
+  codeInput --- codeFormat
+  codeFormat --- codeOutput
+  codeOutput --- userOutput
 
-classDef userInput fill:#bfbfff
-classDef userOutput fill:#bfbfff
-classDef codeInput fill:#ffbfbf
-classDef codeFormat fill:#ffffbf
-classDef codeOutput fill:#bfffbf
+  classDef userInput fill:#bfbfff
+  classDef userOutput fill:#bfbfff
+  classDef codeInput fill:#ffbfbf
+  classDef codeFormat fill:#ffffbf
+  classDef codeOutput fill:#bfffbf
 ```
 
 #### Initial Idea 1: Simultaneous
 
 ```mermaid
-graph TB
+  graph TB
 
-inputA[/"User Does a Thing"\]:::userInput
-requestA1[["Make a Request from API 1"]]:::codeInput
-resultA1>"API 1 Returns Something"]:::codeOutput
-requestA2[["Make a Request from API 2"]]:::codeInput
-resultA2>"API 2 Returns Something"]:::codeOutput
-mergeA[("Merge Results")]:::codeFormat
-formatA[("Format Results")]:::codeFormat
-outputA[\"Something is Displayed to the User"/]:::userOutput
+  inputA[/"User Does a Thing"\]:::userInput
+  requestA1[["Make a Request from API 1"]]:::codeInput
+  resultA1>"API 1 Returns Something"]:::codeOutput
+  requestA2[["Make a Request from API 2"]]:::codeInput
+  resultA2>"API 2 Returns Something"]:::codeOutput
+  mergeA[("Merge Results")]:::codeFormat
+  formatA[("Format Results")]:::codeFormat
+  outputA[\"Something is Displayed to the User"/]:::userOutput
 
-inputA --> requestA1 & requestA2
-requestA1 --> resultA1
-requestA2 --> resultA2
-resultA1 & resultA2 --> mergeA
-mergeA --> formatA
-formatA --> outputA
+  inputA --> requestA1 & requestA2
+  requestA1 --> resultA1
+  requestA2 --> resultA2
+  resultA1 & resultA2 --> mergeA
+  mergeA --> formatA
+  formatA --> outputA
 
-classDef userInput fill:#bfbfff
-classDef userOutput fill:#bfbfff
-classDef codeInput fill:#ffbfbf
-classDef codeFormat fill:#ffffbf
-classDef codeOutput fill:#bfffbf
+  classDef userInput fill:#bfbfff
+  classDef userOutput fill:#bfbfff
+  classDef codeInput fill:#ffbfbf
+  classDef codeFormat fill:#ffffbf
+  classDef codeOutput fill:#bfffbf
 ```
 
 #### Initial Idea 2: Sequential
 
 ```mermaid
-graph TB
+  graph TB
 
-inputB[/"User Does a Thing"\]:::userInput
-requestB1[["Make a Request from API 1"]]:::codeInput
-resultB1>"API 1 Returns Something"]:::codeOutput
-generateB2[("Generate Request from Result")]:::codeFormat
-requestB2[["Make a Request from API 2"]]:::codeInput
-resultB2>"API 2 Returns Something"]:::codeOutput
-formatB[("Format Results")]:::codeFormat
-outputB[\"Something is Displayed to the User"/]:::userOutput
+  inputB[/"User Does a Thing"\]:::userInput
+  requestB1[["Make a Request from API 1"]]:::codeInput
+  resultB1>"API 1 Returns Something"]:::codeOutput
+  generateB2[("Generate Request from Result")]:::codeFormat
+  requestB2[["Make a Request from API 2"]]:::codeInput
+  resultB2>"API 2 Returns Something"]:::codeOutput
+  formatB[("Format Results")]:::codeFormat
+  outputB[\"Something is Displayed to the User"/]:::userOutput
 
-inputB --> requestB1
-requestB1 --> resultB1
-resultB1 --> generateB2
-generateB2 --> requestB2
-requestB2 --> resultB2
-resultB2 --> formatB
-formatB --> outputB
+  inputB --> requestB1
+  requestB1 --> resultB1
+  resultB1 --> generateB2
+  generateB2 --> requestB2
+  requestB2 --> resultB2
+  resultB2 --> formatB
+  formatB --> outputB
 
-classDef userInput fill:#bfbfff
-classDef userOutput fill:#bfbfff
-classDef codeInput fill:#ffbfbf
-classDef codeFormat fill:#ffffbf
-classDef codeOutput fill:#bfffbf
+  classDef userInput fill:#bfbfff
+  classDef userOutput fill:#bfbfff
+  classDef codeInput fill:#ffbfbf
+  classDef codeFormat fill:#ffffbf
+  classDef codeOutput fill:#bfffbf
 ```
 
 
 ---
 
-##### Current
+#### Current Idea
 
 ```mermaid
-graph TB
+  graph TB
 
-subgraph html1["index.html"]
-direction TB
-input[/"User Writes Text"\]:::userInput
-end
+  subgraph html1["index.html"]
+    direction TB
+    input[/"User Writes Text"\]:::userInput
+  end
 
-input --> encode1 & encode2
+  input --> encode1 & encode2
 
-subgraph js1["script.js"]
-direction TB
-encode1[["Generate API Request"]]:::codeInput
+  subgraph js1["script.js"]
+    direction TB
+    encode1[["Generate API Request"]]:::codeInput
 
-encode2[["Generate API Request"]]:::codeInput
-end
+    encode2[["Generate API Request"]]:::codeInput
+  end
 
-encode1 --> api1
-encode2 --> api2
+  encode1 --> api1
+  encode2 --> api2
 
-subgraph api1["API 1"]
-direction TB
-request1[["Send Text to API 1"]]:::codeInput
+  subgraph api1["API 1"]
+    direction TB
+    request1[["Send Text to API 1"]]:::codeInput
 
-request1 --> result1
+    request1 --> result1
 
-result1>"API 1 Returns JSON"]:::codeOutput
-end
+    result1>"API 1 Returns JSON"]:::codeOutput
+  end
 
-result1 --> format1
+  result1 --> format1
 
-subgraph api2["API 2"]
-direction TB
-request2[["Send Text to API 1"]]:::codeInput
+  subgraph api2["API 2"]
+    direction TB
+    request2[["Send Text to API 1"]]:::codeInput
 
-request2 --> result2
+    request2 --> result2
 
-result2>"API 2 Returns JSON"]:::codeOutput
-end
+    result2>"API 2 Returns JSON"]:::codeOutput
+  end
 
-result2 --> format2
+  result2 --> format2
 
-subgraph js2["script.js"]
-direction TB
-format1[("Format JSON")]:::codeFormat
+  subgraph js2["script.js"]
+    direction TB
+    format1[("Format JSON")]:::codeFormat
 
-format1 --> output1
+    format1 --> output1
 
-output1[("Text Element Created")]:::userOutput
+    output1[("Text Element Created")]:::userOutput
 
-format2[("Format JSON")]:::codeFormat
+    format2[("Format JSON")]:::codeFormat
 
-format2 --> output2
+    format2 --> output2
 
-output2[("Text Element Created")]:::userOutput
-end
+    output2[("Text Element Created")]:::userOutput
+  end
 
-output1 & output2 --> html2
+  output1 & output2 --> html2
 
-subgraph html2["index.html"]
-direction TB
-display[\"Display Results"/]:::userOutput
-end
+  subgraph html2["index.html"]
+    direction TB
+    display[\"Display Results"/]:::userOutput
+  end
 
-classDef userInput fill:#ffbfbf
-classDef userOutput fill:#bfbfff
-classDef codeInput fill:#ffbfbf
-classDef codeFormat fill:#bfffbf
-classDef codeOutput fill:#bfbfff
+  classDef userInput fill:#ffbfbf
+  classDef userOutput fill:#bfbfff
+  classDef codeInput fill:#ffbfbf
+  classDef codeFormat fill:#bfffbf
+  classDef codeOutput fill:#bfbfff
 ```
 
 ---
