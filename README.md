@@ -1,14 +1,16 @@
 # Hyper-Useful API Exploiter
 
-## Description
+## README
+
+### Description
 
 Text go in, other text go out
 
-## Features
+### Features
 
 - Translate text into various other semi-legitimate sociolects 
 
-## Technologies
+### Technologies
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) 
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) 
@@ -419,3 +421,159 @@ classDef codeOutput fill:#bfbfff
 - [RPS-101](https://rps101.pythonanywhere.com/api?ref=apislist.com): Rock, Paper, Scissors with 101 Objects
 
 ---
+
+### Arguments with Bard
+
+#### CSS Help
+
+##### Question
+
+I am building a small web app. I will paste the HTML & JavaScript code into this chat, and I would like you to give me CSS code that I can use to populate the stylesheet.
+
+Please suggest 10 alternative & contrasting approaches with commentary. There should be a variety of layouts between these approaches, and each approach should include at least one technique not used in the other approaches.
+
+##### Answer
+
+Here are 10 alternative and contrasting CSS approaches for your small web app, with commentary:
+
+**Approach 1: Simple flexbox**
+
+```css
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#dummyDiv {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dummyClass {
+  font-size: 24px;
+}
+
+.result1Box, .result2Box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+
+Commentary: This approach uses flexbox to create a simple two-column layout, with the dummy content in the left column and the result boxes in the right column. The result boxes are also flex containers, so the content inside them will be centered both horizontally and vertically.
+
+**Approach 2: Grid layout**
+
+```css
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+#dummyDiv {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dummyClass {
+  font-size: 24px;
+}
+
+.result1Box, .result2Box {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+
+Commentary: This approach uses grid layout to create the same two-column layout as the previous approach, but it is a bit more flexible. For example, you could easily add a third column or change the order of the columns.
+
+**Approach 3: CSS variables**
+
+```css
+:root {
+  --dummy-font-size: 24px;
+  --result-box-height: 100px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#dummyDiv {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dummyClass {
+  font-size: var(--dummy-font-size);
+}
+
+.result1Box, .result2Box {
+  flex: 1;
+  height: var(--result-box-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+
+Commentary: This approach uses CSS variables to define the font size and height of the dummy content and result boxes. This makes it easy to change these values throughout your CSS without having to search for them and replace them all.
+
+**Approach 4: CSS preprocessors**
+
+```css
+/* Sass */
+
+$dummy-font-size: 24px;
+$result-box-height: 100px;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#dummyDiv {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dummyClass {
+  font-size: $dummy-font-size;
+}
+
+.result1Box, .result2Box {
+  flex: 1;
+  height: $result-box-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+
+Commentary: CSS preprocessors like Sass and LESS allow you to use variables, mixins, and other features to make your CSS more organized and maintainable. This
