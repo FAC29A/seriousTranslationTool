@@ -18,6 +18,8 @@
 
   //Get Stuff from API
     async function pullFromAPI(api, method, contentType, requestBody, targetDiv) {
+      
+      // Turn form text input into string and create full URL
       const formDataObject = Object.fromEntries(requestBody.entries());
       const url = api;
       const queryString = new URLSearchParams(formDataObject).toString();
@@ -25,12 +27,12 @@
 
       console.log(fullURL);
 
-      const translatedText = fetch(url, {
+      const translatedText = fetch(fullURL, {
         method: method,
-        headers: {
-          "Content-Type": contentType,
-          "Host": host,
-        },
+        // headers: {
+        //   // "Content-Type": contentType,
+        //   "Host": host,
+        // },
         body: JSON.stringify(formDataObject)
       })
       .then((response) => {
