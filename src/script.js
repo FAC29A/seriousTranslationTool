@@ -17,14 +17,18 @@
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(form);
+    console.log("Form Data is: ", formData);
   
-    await pullFromAPI(shakespeare, "GET", "application/JSON", formData, container1);
-    //* I changed POST to GET
-    //* We were getting the forbidden response because the API doesn't accept POST
+    // await pullFromAPI(shakespeare, "GET", "application/JSON", formData, container1);
+      //* I changed POST to GET
+      //* We were getting the forbidden response because the API doesn't accept POST
+      //* Hold the phone, GET is default. We can omit it.
+    await pullFromAPI(shakespeare, formData, container1);
   })
 
   //Get Stuff from API
-    async function pullFromAPI(api, method, contentType, requestBody, targetDiv) {
+    // async function pullFromAPI(api, method, contentType, requestBody, targetDiv) {
+    async function pullFromAPI(api, requestBody, targetDiv) {
       
       // Turn form text input into string and create full URL
       const formDataObject = Object.fromEntries(requestBody.entries());
@@ -49,16 +53,16 @@
       const fullURL = url + queryString;
       console.log("fullURL is: ", fullURL);
 
-      const translatedText = fetch(fullURL, {
-        method: method,
+      const translatedText = fetch(fullURL) ////{
+        //// method: method,
         //// headers: {
         //// "Content-Type": contentType,
         ////   "Host": host,
         //// },
         //// body: JSON.stringify(formDataObject)
-      })
+      ////}
       .then((response) => {
-        if (!response.ok) {
+        if(!response.ok) {
           const error = new Error(response.status);
           throw error;
         }
@@ -68,10 +72,8 @@
         //* Phoebe's Original
           //? console.log(response.JSON);
           //? return response.JSON;
-        //* Attempt 1
-          console.log("Stringified Response is: ", JSON.stringify(response));
-          return JSON.stringify(response);
-        //todo Okay
+          console.log("Response JSON is: ", response.json(  ));
+          return response.json();
       })
       .then((responseObject) => responseObject.contents.translated)
       .catch(console.error)
