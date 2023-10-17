@@ -1,9 +1,6 @@
-//Dummy Variables
-  const dummyContent = "stuff";
-
 //API Sources
   const host = "api.funtranslations.com";
-  const shakespeare = ("https://api.funtranslations.com/translate/shakespeare.json");
+  const shakespeare = ("https://api.funtranslations.com/translate/shakespeare?=");
 
 //HTML Elements
   const container1 = document.getElementById("result1Box");
@@ -14,38 +11,44 @@
 
   //Get Stuff from API
     async function pullFromAPI(api, method, contentType, requestBody, targetDiv) {
-      const response = await fetch(`${api}`, {
-        method: `${method}`,
+      const url = api + requestBody;
+      console.log(url);
+      const translatedText = fetch((url), {
+        method: method,
         headers: {
-          "Content-Type": `${contentType}`,
-          "Host": `${host}`,
+          "Content-Type": contentType,
+          "Host": host,
         },
-        body: JSON.stringify(`${requestBody}`)
+        body: JSON.stringify(requestBody)
       })
-    
-      const resultObject = await response.json();
-      const resultText = resultObject.contents.translated;
+      .then((response) => {
+        if (!response.ok) {
+          const error = new Error(response.status);
+          throw error;
+        }
+        response.JSON;
+      })
+      .then((responseJSON) => JSON.parse(responseJSON))
+      .then((responseObject) => responseObject.contents.translated)
+      .catch(console.error(error))
 
-      // .then(response => response.json())
-      // .then(let result = (response.contents.translated))
-      pushToPage(resultText, targetDiv);
+      await pushToPage(translatedText, targetDiv);
     }
 
   //Put Stuff on Page
     async function pushToPage(content, box) {
-      //Original Version: const resultText = document.createElement(`p`);
       const resultParagraph = document.createElement("p");
       resultParagraph.className = "dummyClass";
-
+      
       resultParagraph.append(content);
       
       box.append(resultParagraph);
     }
 
-//Testbed
-  //Function Calls
-    //Shakespeare in Result 1
-      pullFromAPI(shakespeare, "POST", "text", "this is an example translation", container1);
+//Testbed: Function Calls
+  //Shakespeare in Container 1
+    pullFromAPI(shakespeare, "POST", "application/JSON", "This is an example text that is ready for translation.", container1);
     
-    //Dummy Content in Result 2
-      pushToPage(dummyContent, container2);
+    // pushToPage(shakespeareA, container1);
+  //Shakespeare in Container 2
+    // pullFromAPI(shakespeare, "POST", "application/JSON", "Aren't you glad that there's more example text?", container2);
