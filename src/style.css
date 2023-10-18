@@ -1,45 +1,53 @@
+/* Baselines */
+    /* Sections */
+        body {
+            margin: 1rem;
+            border: 0.25rem inset burlywood;
+            background-color: floralwhite;
+            padding: 0.5rem;
+        }
+
+        header, main, footer {
+            margin: 1rem;
+            border: 0.25rem outset burlywood;
+            background-color: antiquewhite;
+            padding: 0.5rem;
+        }
+
+        main > section, main > form, main > div {
+            margin: 1rem;
+            border: 0.25rem inset burlywood;
+            padding: 1rem;
+        }
+
+    /* Text */
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0.5rem;
+            border: 0.5rem groove burlywood;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        p {
+            margin: 0.5rem;
+            padding: 0.5rem;
+        }
+
+        footer p {
+            text-align: center;
+        }
+
 /* Utility Classes */
+    /* Alignment */
+        .center {
+            text-align: center;
+        }
 
-.center {
-    text-align: center;
-}
-
-
-/* DEBUG TOOLS */
-    * {
-        margin: 10px;
-        padding: 10px;
-    }
-
-    body {
-        border: 1px dashed black;
-    }
-
-    header {
-        border: 2px solid red;
-    }
-
-    main {
-        border: 2px solid green;
-    }
-
-    footer {
-        border: 2px solid blue;
-    }
-
-    div {
-        border: 1px dashed yellow;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        border: 2px groove cyan;
-    }
-
-    p {
-        border: 2px groove orange;
-    }
+    /* Layout */
+        .flexParent {
+            display: flex;
+            justify-content: space-between;
+        }
+        .flexChild {
+            flex: 1 0 auto;
+        }
