@@ -5,41 +5,26 @@
 
 //HTML Elements
   const container1 = document.getElementById("result1Box");
-  // console.log("Container 1 is: ", container1)
   const container2 = document.getElementById("result2Box");
-  // console.log("Container 2 is: ", container2)
   const form = document.querySelector("form");
-  console.log("Form is: ", form)
+
+//Event Listeners
+  //Get User Input
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      await pullFromAPI(shakespeare, formData, container1);
+    })
 
 //Functions
-  //Get User Input
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const formData = new FormData(form);
-    // console.log("Form Data is: ", formData);
-  
-    // await pullFromAPI(shakespeare, "POST", "application/JSON", formData, container1);
-      //* I changed POST to GET
-      //* We were getting the forbidden response because the API doesn't accept POST
-      //* Hold the phone, GET is default. We can omit it.
-    await pullFromAPI(shakespeare, formData, container1);
-  })
-
   //Get Stuff from API
     async function pullFromAPI(api, requestBody, targetDiv) {
-      
-      // Turn form text input into string and create full URL
       const formDataObject = Object.fromEntries(requestBody.entries());
-    
-      const url = api;
-
       const queryString = formDataObject.originalTextInput.toString();
       
-      const fullURL = url + queryString;
-      let translatedText = "";
+      const url = api + queryString;
       
-      translatedText = fetch(fullURL)
+      let translatedText = await fetch(url)
       .then((response) => response.json())
       .then((responseObject) => responseObject.contents.translated)
       
