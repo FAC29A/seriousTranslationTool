@@ -1,67 +1,146 @@
-/* Project Variables */
+/* Debug */
+    /* * {border: 0.var(--mediumTiny) dashed black;} */
+
+/* Variables */
     :root {
         /* Colours */
             --border: burlywood;
             --background1: floralwhite;
             --background2: antiquewhite;
 
-        /* Frames */
-            /* Styles */
+        /* Borders */
+            /* Styles
+                Set within Classes->Utility->Borders */
                 --frame: ridge;
-                --in: inset;
+                --carve: inset;
                 --jut: outset;
-            /* Widths */
-                --frameSm: 0.2rem;
-                --frameMd: 0.3rem;
-                --frameLg: 0.4rem;
+            
+            /* Widths
+                Set within Elements */
+                --smallSmall: 0.2rem;
+                --smallMedium: 0.4rem;
+                --smallLarge: 0.6rem;
+                --mediumTiny: 1.0rem;
+                --mediumSmall: 1.2rem;
+                --mediumMedium: 1.4rem;
+                --mediumLarge: 1.6rem;
+                --largeSmall: 2.2rem;
+                --largeMedium: 2.4rem;
+                --largeLarge: 2.6rem;
     }
 
-/* Baselines */
+/* Elements */
     /* Sections */
         body {
-            margin: 1rem;
-            border: var(--frameLg) var(--in) var(--border);
+            margin: var(--mediumTiny);
+            border-width: var(smallLarge);
             background-color: var(--background1);
-            padding: 0.5rem;
+            padding: var(--smallMedium);
         }
 
         header, main, footer {
-            margin: 1rem;
-            border: var(--frameLg) var(--jut) var(--border);
+            margin: var(--mediumTiny);
+            border-width: var(smallLarge);
             background-color: var(--background2);
-            padding: 0.5rem;
+            padding: var(--smallMedium);
         }
 
-        main > section, main form, main > div {
-            margin: 1rem;
-            border: var(--frameMd) var(--in) var(--border);
-            padding: 1rem;
+        main section, main form, main div {
+            margin: var(--mediumTiny);
+            padding: var(--mediumTiny);
         }
 
     /* Text */
-        h1, h2, h3, h4, h5, h6 {
-            margin: 0.5rem;
-            border: var(--frameLg) var(--frame) var(--border);
-            padding: 0.5rem;
-            text-align: center;
+        h1 {
+            margin: var(--smallMedium);
+            padding: var(--smallMedium);
+            font-family: 'Jacques Francois Shadow', serif;
+            font-size: var(--largeSmall);
         }
 
-        p {
-            margin: 0.5rem;
-            padding: 0.5rem;
+        h2, h3, h4, h5, h6 {
+            margin: var(--smallMedium);
+            padding: var(--smallMedium);
+            font-family: 'Jacques Francois', serif;
         }
 
-/* Utility Classes */
-    /* Alignment */
-        .center {
-            text-align: center;
+        header p {
+            margin: var(--smallMedium);
+            padding: var(--smallMedium);
+            font-family: 'Judson', sans-serif;
+            font-size: var(--mediumMedium);
         }
+        main p {
+            margin: var(--smallMedium);
+            padding: var(--smallMedium);
+            font-family: 'Judson', sans-serif;
+            font-size: var(--mediumMedium);
+        }
+        
+        footer p {font-family: Italiana;}
 
-    /* Layout */
-        .flexParent {
-            display: flex;
-            justify-content: space-between;
-        }
-        .flexChild {
-            flex: 1 0 auto;
-        }
+        select, option, input {font-family: 'Judson', sans-serif;}
+
+/* Classes */
+    /* Utility */
+        /* Alignment */
+            .alignCenter {text-align: center;}
+            .alignRight {text-align: right;}
+
+        /* Layout */
+            .parent {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .parent > * {margin: var(--smallMedium)}
+            .childBully {flex: 1 0 auto}
+            .childDull {flex: 1 1 auto;}
+            .childWhingey {flex: 0 1 auto}
+            .childScary {flex: 0 0 auto}
+        
+        /* Borders */
+            .borderCarve {
+                border-style: var(--in);
+                border-color: var(--border);
+            }
+
+            .borderFrame {
+                border-style: var(--frame);
+                border-color: var(--border);
+            }
+
+            .borderNone {border-style: hidden;}
+
+
+.form__label {
+    font-family: 'Judson', sans-serif;
+    font-size: var(--mediumSmall);
+    margin-left: auto;
+    margin-top: auto;
+    display: block;
+    transition: all 0.3s;
+    transform: translateY(0rem);
+    }
+    
+    .form__input {
+    font-family: 'Judson', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+        margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 90%;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+    }
+    
+    .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-4rem);
+    transform: translateY(-4rem);
+    }
