@@ -1,6 +1,7 @@
 //API Sources
   const host = "api.funtranslations.com";
   const shakespeare = ("https://api.funtranslations.com/translate/shakespeare.json?text=");
+  const pirate = ("https://api.funtranslations.com/translate/pirate.json?text=");
   //* Think this was formatted incorrectly. By me.
 
 //HTML Elements
@@ -14,6 +15,9 @@
       event.preventDefault();
       const formData = new FormData(form);
       await pullFromAPI(shakespeare, formData, container1);
+      await pullFromAPI(pirate, formData, container2);
+
+      // add in second api call
     })
 
 //Functions
