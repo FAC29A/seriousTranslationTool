@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Shakespearean Pirate Translator</title>
+
     <link rel="stylesheet" href="/src/normalize.css" />
     <link rel="stylesheet" href="/src/style.css" />
+
     <script src="/src/script.js" defer="true"></script>
 </head>
 
@@ -13,38 +16,44 @@
     <header>
         <h1>VeRy PrOfEsH, MuCh WoW!</h1>
     </header>
-    
-    <hr />
 
     <main>
-        <h2>Magical Wordy Boxings</h2>
+        <div>
+            <h2>Magical Wordy Boxings</h2>
 
-        <form action="#" method="get" class="center">
-            <label for="originalTextInput">Text for translation:</label>
-            <br>
-            <input type="text" id="originalTextInput" name="originalTextInput">
-            <br>
-            <button type="submit">Translate!</button>
-        </form>
+            <div class="center">
+                <p>Explanation of this deeply complex concept.</p>
+            </div>
 
-        <div id="dummyDiv">
-            <h3>Dummy Box</h3>
-            <p>Hi</p>
+            <form action="#" method="get" class="center">
+                <label for="originalTextInput">Untranslated Text</label>
+                <br>
+                <input type="text" id="originalTextInput" name="originalTextInput">
+                <hr/>
+                <button type="submit">Translate!</button>
+            </form>
         </div>
+        
 
-        <div id="result1Box">
-            <h3>Actual Box</h3>
-        </div>
+        <div id="resultBoxes" class="flexParent">
+            <div id="result1Box" class="flexChild">
+                <h3>Translation 1</h3>
+            </div>
 
-        <div id="result2Box">
-            <h3>Also Box</h3>
+            <div id="result2Box" class="flexChild">
+                <h3>Translation 2</h3>
+            </div>
         </div>
     </main>
 
-    <hr />
+    <footer class="flexParent">
+        <div class="flexChild">
+            <p>Much foot</p>
+        </div>
 
-    <footer>
-        <p>Much foot</p>
+        <div class="flexChild">
+            <p>Very Wow</p>
+        </div>
     </footer>
 </body>
 </html>
