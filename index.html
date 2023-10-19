@@ -6,37 +6,51 @@
     
     <title>Serious Translation Tool</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jacques+Francois+Shadow&family=Jacques+Francois&family=Judson&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="src/normalize.css" />
     <link rel="stylesheet" href="src/style.css" />
-
     <script defer src="src/script.js"></script>
 </head>
 
-<body>
-    <header>
-        <h1>The Chronolecticon</h1>
-
-        <div class="center">
-            <p>Explanation of this deeply complex concept.</p>
-        </div>
+<body class="borderCarve">
+    <header class="parent borderFrame">
+        <img id="logo" class="childWhingey" alt="logo"/>
+        <h1 class="childBully">The Chronolecticon</h1>
+        <p class="childDull center">Explanation of this deeply complex concept.</p>
     </header>
 
-    <main>
-        <div>
-            <h2>Magical Wordy Boxings</h2>
+    <main class="borderFrame">
+        <section id="input">
+            <h2 class="center">Rustic Verbiage</h2>
+            <form class="parent borderNone center" action="#" method="get">
+                <div id="formSelect1" class="childDull borderFrame">
+                    <label for="language1Select"><h3>Serious Language One</h3></label>
 
-            <form action="#" method="get" class="center">
-                <div>
-                    <label for="originalTextInput">Untranslated Text</label>
-                    <br>
+                    <select name="language1Input" id="language1Select">
+                        <option value="">--Please choose an option--</option>
+                        <option value="oldEnglish">Old English</option>
+                        <option value="pigLatin">Pig Latin</option>
+                        <option value="mandalorian">Mandalorian</option>
+                        <option value="shakespeare">Shakespeare</option>
+                        <option value="pirate">Pirate</option>
+                        <option value="emoji">Emoji</option>
+                    </select>
+                </div>
+                
+                <div id="formUserText" class="childDull borderFrame">
+                    <label for="originalTextInput"><h3>Untranslated Text</h3></label>
                     <input type="text" id="originalTextInput" name="originalTextInput">
+
+                    <button type="submit">Translate!</button>
                 </div>
-                
-                <div class="flexParent">
-                    <div class="flexChild">
-                        <label for="language1Select">Serious Language One:</label>
-                        <br/>
-                        <select name="language1Input" id="language1Select">
+
+                <div id="formSelect2" class="childDull borderFrame">
+                    <label for="language2Select"><h3>Serious Language Two</h3></label>
+                    
+                    <select name="language2Input" id="language2Select">
                         <option value="">--Please choose an option--</option>
                         <option value="oldEnglish">Old English</option>
                         <option value="pigLatin">Pig Latin</option>
@@ -44,50 +58,30 @@
                         <option value="shakespeare">Shakespeare</option>
                         <option value="pirate">Pirate</option>
                         <option value="emoji">Emoji</option>
-                        </select>
-                    </div>
-
-                    <div class="flexChild">
-                        <label for="language2Select">Serious Language Two:</label>
-                        <br/>
-                        <select name="language2Input" id="language2Select">
-                        <option value="">--Please choose an option--</option>
-                        <option value="oldEnglish">Old English</option>
-                        <option value="pigLatin">Pig Latin</option>
-                        <option value="mandalorian">Mandalorian</option>
-                        <option value="shakespeare">Shakespeare</option>
-                        <option value="pirate">Pirate</option>
-                        <option value="emoji">Emoji</option>
-                        </select>
-                    </div>
+                    </select>
                 </div>
-                
-                <hr/>
-
-                <button type="submit">Translate!</button>
             </form>
-        </div>
-        
+        </section>
 
-        <div id="resultBoxes" class="flexParent">
-            <div id="result1Box" class="flexChild">
-                <h3>Translation 1</h3>
-            </div>
+        <section id="output">
+            <h2 class="center">Refined Parlance</h2>
 
-            <div id="result2Box" class="flexChild">
-                <h3>Translation 2</h3>
+            <div class="parent borderNone">
+                <div id="result1Box" class="childDull borderFrame center">
+                    <h3>Translation One</h3>
+                </div>
+
+                <div id="result2Box" class="childDull borderFrame center">
+                    <h3>Translation Two</h3>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="flexParent">
-        <div class="flexChild">
-            <p>Much foot</p>
-        </div>
+    <footer class="parent borderFrame">
+        <p class="childDull center">Much foot</p>
 
-        <div class="flexChild">
-            <p>Very Wow</p>
-        </div>
+        <p class="childDull center">Very Wow</p>
     </footer>
 </body>
 </html>

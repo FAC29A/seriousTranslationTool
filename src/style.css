@@ -1,67 +1,101 @@
-/* Project Variables */
+/* Debug */
+    /* * {border: 0.var(--mediumTiny) dashed black;} */
+
+/* Variables */
     :root {
         /* Colours */
             --border: burlywood;
             --background1: floralwhite;
             --background2: antiquewhite;
 
-        /* Frames */
-            /* Styles */
+        /* Borders */
+            /* Styles
+                Set within Classes->Utility->Borders */
                 --frame: ridge;
-                --in: inset;
+                --carve: inset;
                 --jut: outset;
-            /* Widths */
-                --frameSm: 0.2rem;
-                --frameMd: 0.3rem;
-                --frameLg: 0.4rem;
+            
+            /* Widths
+                Set within Elements */
+                --smallSmall: 0.2rem;
+                --smallMedium: 0.4rem;
+                --smallLarge: 0.6rem;
+                --mediumTiny: 1.0rem;
+                --mediumSmall: 1.2rem;
+                --mediumMedium: 1.4rem;
+                --mediumLarge: 1.6rem;
+                --largeSmall: 2.2rem;
+                --largeMedium: 2.4rem;
+                --largeLarge: 2.6rem;
     }
 
-/* Baselines */
+/* Elements */
     /* Sections */
         body {
-            margin: 1rem;
-            border: var(--frameLg) var(--in) var(--border);
+            margin: var(--mediumTiny);
+            border-width: var(smallLarge);
             background-color: var(--background1);
-            padding: 0.5rem;
+            padding: var(--smallMedium);
         }
 
         header, main, footer {
-            margin: 1rem;
-            border: var(--frameLg) var(--jut) var(--border);
+            margin: var(--mediumTiny);
+            border-width: var(smallLarge);
             background-color: var(--background2);
-            padding: 0.5rem;
+            padding: var(--smallMedium);
         }
 
-        main > section, main form, main > div {
-            margin: 1rem;
-            border: var(--frameMd) var(--in) var(--border);
-            padding: 1rem;
+        main section, main form, main div {
+            margin: var(--mediumTiny);
+            padding: var(--mediumTiny);
         }
 
     /* Text */
-        h1, h2, h3, h4, h5, h6 {
-            margin: 0.5rem;
-            border: var(--frameLg) var(--frame) var(--border);
-            padding: 0.5rem;
-            text-align: center;
+        h1 {
+            margin: var(--smallMedium);
+            padding: var(--smallMedium);
+            font-family: 'Jacques Francois Shadow', serif;
+        }
+
+        h2, h3, h4, h5, h6 {
+            margin: var(--smallMedium);
+            padding: var(--smallMedium);
+            font-family: 'Jacques Francois', serif;
         }
 
         p {
-            margin: 0.5rem;
-            padding: 0.5rem;
+            margin: var(--smallMedium);
+            padding: var(--smallMedium);
+            font-family: 'Judson', sans-serif;
         }
+        
+        footer p, select, option, input {font-family: Italiana;}
 
-/* Utility Classes */
-    /* Alignment */
-        .center {
-            text-align: center;
-        }
+/* Classes */
+    /* Utility */
+        /* Alignment */
+            .center {text-align: center;}
 
-    /* Layout */
-        .flexParent {
-            display: flex;
-            justify-content: space-between;
-        }
-        .flexChild {
-            flex: 1 0 auto;
-        }
+        /* Layout */
+            .parent {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .childBully {flex: 1 0 auto}
+            .childDull {flex: 1 1 auto;}
+            .childWhingey {flex: 0 1 auto}
+            .childScary {flex: 0 0 auto}
+        
+        /* Borders */
+            .borderCarve {
+                border-style: var(--in);
+                border-color: var(--border);
+            }
+
+            .borderFrame {
+                border-style: var(--frame);
+                border-color: var(--border);
+            }
+
+            .borderNone {border-style: hidden;}
