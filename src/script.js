@@ -22,7 +22,7 @@
 
 //Functions
   //Get Stuff from API
-    async function pullFromAPI(api, requestBody, targetDiv) {
+    async function pullFromAPI(api, api, requestBody, targetDiv) {
       const formDataObject = Object.fromEntries(requestBody.entries());
       const queryString = formDataObject.originalTextInput.toString();
       

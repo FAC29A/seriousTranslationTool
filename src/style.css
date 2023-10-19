@@ -1,29 +1,40 @@
+/* Project Variables */
+    :root {
+        /* Colours */
+            --border: burlywood;
+            --background1: floralwhite;
+            --background2: antiquewhite;
+
+        /* Widths */
+            --
+    }
+
 /* Baselines */
     /* Sections */
         body {
             margin: 1rem;
-            border: 0.25rem inset burlywood;
-            background-color: floralwhite;
+            border: 0.4rem inset var(--border);
+            background-color: var(--background1);
             padding: 0.5rem;
         }
 
         header, main, footer {
             margin: 1rem;
-            border: 0.25rem outset burlywood;
-            background-color: antiquewhite;
+            border: 0.4rem outset var(--border);
+            background-color: var(--background2);
             padding: 0.5rem;
         }
 
         main > section, main > form, main > div {
             margin: 1rem;
-            border: 0.25rem inset burlywood;
+            border: 0.3rem inset burlywood;
             padding: 1rem;
         }
 
     /* Text */
         h1, h2, h3, h4, h5, h6 {
             margin: 0.5rem;
-            border: 0.5rem groove burlywood;
+            border: 0.5rem ridge burlywood;
             padding: 0.5rem;
             text-align: center;
         }
