@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Shakespearean Pirate Translator</title>
+    <title>Serious Translation Tool</title>
 
     <link rel="stylesheet" href="src/normalize.css" />
     <link rel="stylesheet" href="src/style.css" />
@@ -14,46 +14,56 @@
 
 <body>
     <header>
-        <h1>VeRy PrOfEsH, MuCh WoW!</h1>
+        <h1>The Chronolecticon</h1>
+
+        <div class="center">
+            <p>Explanation of this deeply complex concept.</p>
+        </div>
     </header>
 
     <main>
         <div>
             <h2>Magical Wordy Boxings</h2>
 
-            <div class="center">
-                <p>Explanation of this deeply complex concept.</p>
-            </div>
-
             <form action="#" method="get" class="center">
-                <label for="originalTextInput">Untranslated Text</label>
-                <br>
-                <input type="text" id="originalTextInput" name="originalTextInput">
-                <br>
-                <label for="language1Select">Serious Language One:</label>
-                <br>
-                <select name="language1Input" id="language1Select">
-                    <option value="">--Please choose an option--</option>
-                    <option value="oldEnglish">Old English</option>
-                    <option value="pigLatin">Pig Latin</option>
-                    <option value="mandalorian">Mandalorian</option>
-                    <option value="shakespeare">Shakespeare</option>
-                    <option value="pirate">Pirate</option>
-                    <option value="emoji">Emoji</option>
-                  </select>
-                  <br>
-                <label for="language2Select">Serious Language Two:</label>
-                <br>
-                <select name="language2Input" id="language2Select">
-                    <option value="">--Please choose an option--</option>
-                    <option value="oldEnglish">Old English</option>
-                    <option value="pigLatin">Pig Latin</option>
-                    <option value="mandalorian">Mandalorian</option>
-                    <option value="shakespeare">Shakespeare</option>
-                    <option value="pirate">Pirate</option>
-                    <option value="emoji">Emoji</option>
-                  </select>
+                <div>
+                    <label for="originalTextInput">Untranslated Text</label>
+                    <br>
+                    <input type="text" id="originalTextInput" name="originalTextInput">
+                </div>
+                
+                <div class="flexParent">
+                    <div class="flexChild">
+                        <label for="language1Select">Serious Language One:</label>
+                        <br/>
+                        <select name="language1Input" id="language1Select">
+                        <option value="">--Please choose an option--</option>
+                        <option value="oldEnglish">Old English</option>
+                        <option value="pigLatin">Pig Latin</option>
+                        <option value="mandalorian">Mandalorian</option>
+                        <option value="shakespeare">Shakespeare</option>
+                        <option value="pirate">Pirate</option>
+                        <option value="emoji">Emoji</option>
+                        </select>
+                    </div>
+
+                    <div class="flexChild">
+                        <label for="language2Select">Serious Language Two:</label>
+                        <br/>
+                        <select name="language2Input" id="language2Select">
+                        <option value="">--Please choose an option--</option>
+                        <option value="oldEnglish">Old English</option>
+                        <option value="pigLatin">Pig Latin</option>
+                        <option value="mandalorian">Mandalorian</option>
+                        <option value="shakespeare">Shakespeare</option>
+                        <option value="pirate">Pirate</option>
+                        <option value="emoji">Emoji</option>
+                        </select>
+                    </div>
+                </div>
+                
                 <hr/>
+
                 <button type="submit">Translate!</button>
             </form>
         </div>

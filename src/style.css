@@ -1,29 +1,47 @@
+/* Project Variables */
+    :root {
+        /* Colours */
+            --border: burlywood;
+            --background1: floralwhite;
+            --background2: antiquewhite;
+
+        /* Frames */
+            /* Styles */
+                --frame: ridge;
+                --in: inset;
+                --jut: outset;
+            /* Widths */
+                --frameSm: 0.2rem;
+                --frameMd: 0.3rem;
+                --frameLg: 0.4rem;
+    }
+
 /* Baselines */
     /* Sections */
         body {
             margin: 1rem;
-            border: 0.25rem inset burlywood;
-            background-color: floralwhite;
+            border: var(--frameLg) var(--in) var(--border);
+            background-color: var(--background1);
             padding: 0.5rem;
         }
 
         header, main, footer {
             margin: 1rem;
-            border: 0.25rem outset burlywood;
-            background-color: antiquewhite;
+            border: var(--frameLg) var(--jut) var(--border);
+            background-color: var(--background2);
             padding: 0.5rem;
         }
 
-        main > section, main > form, main > div {
+        main > section, main form, main > div {
             margin: 1rem;
-            border: 0.25rem inset burlywood;
+            border: var(--frameMd) var(--in) var(--border);
             padding: 1rem;
         }
 
     /* Text */
         h1, h2, h3, h4, h5, h6 {
             margin: 0.5rem;
-            border: 0.5rem groove burlywood;
+            border: var(--frameLg) var(--frame) var(--border);
             padding: 0.5rem;
             text-align: center;
         }
@@ -31,10 +49,6 @@
         p {
             margin: 0.5rem;
             padding: 0.5rem;
-        }
-
-        footer p {
-            text-align: center;
         }
 
 /* Utility Classes */
