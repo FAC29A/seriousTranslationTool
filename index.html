@@ -29,8 +29,10 @@
             <h2 class="alignCenter">Rustic Verbiage</h2>
             <form class="parent borderNone alignCenter" action="#" method="get">
                 <div id="formSelect1" class="childWhingey borderFrame">
-                    <label for="language1Select"><h3>Serious Language One</h3></label>
-
+                    <label for="language1Select" class="form__label center">
+                        Serious Language One
+                    </label>
+                    <br/>
                     <select name="language1Input" id="language1Select">
                         <option value="">--Please choose an option--</option>
                         <option value="oldEnglish">Old English</option>
@@ -43,15 +45,19 @@
                 </div>
                 
                 <div id="formUserText" class="childBully borderFrame">
-                    <label for="originalTextInput"><h3>Untranslated Text</h3></label>
-                    <input type="text" id="originalTextInput" name="originalTextInput">
-
+                    <input type="text" id="originalTextInput" name="originalTextInput" class="form__input" placeholder="Untranslated Text" required="">
+                    <label for="originalTextInput" class="form__label">
+                        Untranslated Text
+                    </label>
+                    <hr/>
                     <button type="submit">Translate!</button>
                 </div>
 
                 <div id="formSelect2" class="childWhingey borderFrame">
-                    <label for="language2Select"><h3>Serious Language Two</h3></label>
-                    
+                    <label for="language2Select" class="form__label center">
+                        Serious Language Two
+                    </label>
+                    <br/>
                     <select name="language2Input" id="language2Select">
                         <option value="">--Please choose an option--</option>
                         <option value="oldEnglish">Old English</option>
