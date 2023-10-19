@@ -5,36 +5,43 @@
             --background1: floralwhite;
             --background2: antiquewhite;
 
-        /* Widths */
-            --
+        /* Frames */
+            /* Styles */
+                --frame: ridge;
+                --in: inset;
+                --jut: outset;
+            /* Widths */
+                --frameSm: 0.2rem;
+                --frameMd: 0.3rem;
+                --frameLg: 0.4rem;
     }
 
 /* Baselines */
     /* Sections */
         body {
             margin: 1rem;
-            border: 0.4rem inset var(--border);
+            border: var(--frameLg) var(--in) var(--border);
             background-color: var(--background1);
             padding: 0.5rem;
         }
 
         header, main, footer {
             margin: 1rem;
-            border: 0.4rem outset var(--border);
+            border: var(--frameLg) var(--jut) var(--border);
             background-color: var(--background2);
             padding: 0.5rem;
         }
 
         main > section, main > form, main > div {
             margin: 1rem;
-            border: 0.3rem inset burlywood;
+            border: var(--frameMd) var(--in) var(--border);
             padding: 1rem;
         }
 
     /* Text */
         h1, h2, h3, h4, h5, h6 {
             margin: 0.5rem;
-            border: 0.5rem ridge burlywood;
+            border: var(--frameLg) var(--frame) var(--border);
             padding: 0.5rem;
             text-align: center;
         }
@@ -42,10 +49,6 @@
         p {
             margin: 0.5rem;
             padding: 0.5rem;
-        }
-
-        footer p {
-            text-align: center;
         }
 
 /* Utility Classes */
