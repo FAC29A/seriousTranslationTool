@@ -55,6 +55,7 @@
             margin: var(--smallMedium);
             padding: var(--smallMedium);
             font-family: 'Jacques Francois Shadow', serif;
+            font-size: var(--largeSmall);
         }
 
         h2, h3, h4, h5, h6 {
@@ -63,18 +64,28 @@
             font-family: 'Jacques Francois', serif;
         }
 
-        p {
+        header p {
             margin: var(--smallMedium);
             padding: var(--smallMedium);
             font-family: 'Judson', sans-serif;
+            font-size: var(--mediumMedium);
+        }
+        main p {
+            margin: var(--smallMedium);
+            padding: var(--smallMedium);
+            font-family: 'Judson', sans-serif;
+            font-size: var(--mediumMedium);
         }
         
-        footer p, select, option, input {font-family: Italiana;}
+        footer p {font-family: Italiana;}
+
+        select, option, input {font-family: 'Judson', sans-serif;}
 
 /* Classes */
     /* Utility */
         /* Alignment */
-            .center {text-align: center;}
+            .alignCenter {text-align: center;}
+            .alignRight {text-align: right;}
 
         /* Layout */
             .parent {

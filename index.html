@@ -12,21 +12,23 @@
 
     <link rel="stylesheet" href="src/normalize.css" />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
     <script defer src="src/script.js"></script>
 </head>
 
 <body class="borderCarve">
     <header class="parent borderFrame">
-        <img id="logo" class="childWhingey" alt="logo"/>
+        <img src="images/favicon-32x32.png" id="logo" class="childWhingey" alt="logo"/>
         <h1 class="childBully">The Chronolecticon</h1>
-        <p class="childDull center">Explanation of this deeply complex concept.</p>
+        <p class="childDull alignRight">The Discerning Professional's Linguistic Tool</p>
     </header>
 
     <main class="borderFrame">
         <section id="input">
-            <h2 class="center">Rustic Verbiage</h2>
-            <form class="parent borderNone center" action="#" method="get">
-                <div id="formSelect1" class="childDull borderFrame">
+            <h2 class="alignCenter">Rustic Verbiage</h2>
+            <form class="parent borderNone alignCenter" action="#" method="get">
+                <div id="formSelect1" class="childWhingey borderFrame">
                     <label for="language1Select"><h3>Serious Language One</h3></label>
 
                     <select name="language1Input" id="language1Select">
@@ -40,14 +42,14 @@
                     </select>
                 </div>
                 
-                <div id="formUserText" class="childDull borderFrame">
+                <div id="formUserText" class="childBully borderFrame">
                     <label for="originalTextInput"><h3>Untranslated Text</h3></label>
                     <input type="text" id="originalTextInput" name="originalTextInput">
 
                     <button type="submit">Translate!</button>
                 </div>
 
-                <div id="formSelect2" class="childDull borderFrame">
+                <div id="formSelect2" class="childWhingey borderFrame">
                     <label for="language2Select"><h3>Serious Language Two</h3></label>
                     
                     <select name="language2Input" id="language2Select">
@@ -64,24 +66,26 @@
         </section>
 
         <section id="output">
-            <h2 class="center">Refined Parlance</h2>
+            <h2 class="alignCenter">Refined Parlance</h2>
 
             <div class="parent borderNone">
-                <div id="result1Box" class="childDull borderFrame center">
+                <div id="result1Box" class="childDull borderFrame alignCenter">
                     <h3>Translation One</h3>
+                    <hr/>
                 </div>
 
-                <div id="result2Box" class="childDull borderFrame center">
+                <div id="result2Box" class="childDull borderFrame alignCenter">
                     <h3>Translation Two</h3>
+                    <hr/>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="parent borderFrame">
-        <p class="childDull center">Much foot</p>
+        <p class="childDull alignCenter">Much foot</p>
 
-        <p class="childDull center">Very Wow</p>
+        <p class="childDull alignCenter">Very Wow</p>
     </footer>
 </body>
 </html>
