@@ -1,7 +1,5 @@
 //API Sources
-  const host = "api.funtranslations.com";
-  const shakespeare = ("https://api.funtranslations.com/translate/shakespeare.json?text=");
-  const pirate = ("https://api.funtranslations.com/translate/pirate.json?text=");
+  const rootURL = ("https://api.funtranslations.com/translate/");
   //* Think this was formatted incorrectly. By me.
 
 //HTML Elements
@@ -14,25 +12,28 @@
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const formData = new FormData(form);
-      await pullFromAPI(shakespeare, formData, container1);
-      await pullFromAPI(pirate, formData, container2);
+      const formDataObject = Object.fromEntries(formData.entries());
+      const queryString = formDataObject.originalTextInput.toString();
+      const languageString1 = formDataObject.language1Input.toString();
+      const languageString2 = formDataObject.language2Input.toString();
+      const translated1 = await pullFromAPI(languageString1, queryString);
+      const translated2 = await pullFromAPI(languageString2, queryString);
 
+      // .then (pullFromAPI(rootURL, formData, container2));
+      pushToPage(translated1, container1);
+      pushToPage(translated2, container2);
       // add in second api call
     })
 
 //Functions
   //Get Stuff from API
-    async function pullFromAPI(api, api, requestBody, targetDiv) {
-      const formDataObject = Object.fromEntries(requestBody.entries());
-      const queryString = formDataObject.originalTextInput.toString();
-      
-      const url = api + queryString;
-      
-      let translatedText = await fetch(url)
+    async function pullFromAPI(languageString, queryString) {
+      const url = rootURL + languageString + ".json?text=" + queryString;
+      let translated = await fetch(url)
       .then((response) => response.json())
       .then((responseObject) => responseObject.contents.translated)
       
-      await pushToPage(translatedText, targetDiv);
+      return translated;
     }
 
   //Put Stuff on Page
