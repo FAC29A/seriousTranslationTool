@@ -32,7 +32,7 @@
             padding: 0.5rem;
         }
 
-        main > section, main > form, main > div {
+        main > section, main form, main > div {
             margin: 1rem;
             border: var(--frameMd) var(--in) var(--border);
             padding: 1rem;

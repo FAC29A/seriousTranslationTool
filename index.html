@@ -26,10 +26,44 @@
             <h2>Magical Wordy Boxings</h2>
 
             <form action="#" method="get" class="center">
-                <label for="originalTextInput">Untranslated Text</label>
-                <br>
-                <input type="text" id="originalTextInput" name="originalTextInput">
+                <div>
+                    <label for="originalTextInput">Untranslated Text</label>
+                    <br>
+                    <input type="text" id="originalTextInput" name="originalTextInput">
+                </div>
+                
+                <div class="flexParent">
+                    <div class="flexChild">
+                        <label for="language1Select">Serious Language One:</label>
+                        <br/>
+                        <select name="language1Input" id="language1Select">
+                        <option value="">--Please choose an option--</option>
+                        <option value="oldEnglish">Old English</option>
+                        <option value="pigLatin">Pig Latin</option>
+                        <option value="mandalorian">Mandalorian</option>
+                        <option value="shakespeare">Shakespeare</option>
+                        <option value="pirate">Pirate</option>
+                        <option value="emoji">Emoji</option>
+                        </select>
+                    </div>
+
+                    <div class="flexChild">
+                        <label for="language2Select">Serious Language Two:</label>
+                        <br/>
+                        <select name="language2Input" id="language2Select">
+                        <option value="">--Please choose an option--</option>
+                        <option value="oldEnglish">Old English</option>
+                        <option value="pigLatin">Pig Latin</option>
+                        <option value="mandalorian">Mandalorian</option>
+                        <option value="shakespeare">Shakespeare</option>
+                        <option value="pirate">Pirate</option>
+                        <option value="emoji">Emoji</option>
+                        </select>
+                    </div>
+                </div>
+                
                 <hr/>
+
                 <button type="submit">Translate!</button>
             </form>
         </div>
