@@ -6,24 +6,45 @@
   const container1 = document.getElementById("result1Box");
   const container2 = document.getElementById("result2Box");
   const form = document.querySelector("form");
+  const loadingDiv = document.getElementById("loading-message");
+  loadingDiv.style.display = "none";
 
 //Event Listeners
   //Get User Input
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      loadingDiv.style.display = "block";
+
       const formData = new FormData(form);
       const formDataObject = Object.fromEntries(formData.entries());
       const queryString = formDataObject.originalTextInput.toString();
       const languageString1 = formDataObject.language1Input.toString();
       const languageString2 = formDataObject.language2Input.toString();
+
+      try {
+
       const translated1 = await pullFromAPI(languageString1, queryString);
       const translated2 = await pullFromAPI(languageString2, queryString);
 
-      // .then (pullFromAPI(rootURL, formData, container2));
       pushToPage(translated1, container1);
       pushToPage(translated2, container2);
-      // add in second api call
-    })
+    } catch (error) {
+      // loadingDivs.forEach(div => {
+      //   div.textContent = "Error: " + error.message;
+      // });
+      loadingDiv.innerText = "Error: " + error.message;
+    } finally {
+
+      const hasError = loadingDiv.some(div => div.textContent.startsWith("Error"));
+      if (!hasError) {
+        loadingDiv.style.display = "none";
+      }
+      
+    }
+
+    });
+
+
 
 //Functions
   //Get Stuff from API
@@ -38,12 +59,16 @@
 
   //Put Stuff on Page
     async function pushToPage(content, box) {
+      // loadingDivs.forEach(div => {
+      //   div.style.display = "none";
+      // })
       const resultParagraph = document.createElement("p");
       resultParagraph.className = "dummyClass";
-      
       resultParagraph.textContent = content;
       
       box.append(resultParagraph);
+      loadingDiv.style.display = "none";
+
     }
 
 //Testbed: Function Calls
