@@ -4,9 +4,15 @@
 /* Variables */
     :root {
         /* Colours */
-            --border: burlywood;
-            --background1: floralwhite;
-            --background2: antiquewhite;
+            --color1: burlywood;
+            --color2: antiquewhite;
+            --color3: floralwhite;
+        
+        /* Fonts */
+            --heading1: 'Jacques Francois Shadow', serif;
+            --heading2: 'Jacques Francois', serif;
+            --paragraph: 'Judson', sans-serif;
+
 
         /* Borders */
             /* Styles
@@ -34,15 +40,34 @@
         body {
             margin: var(--mediumTiny);
             border-width: var(smallLarge);
-            background-color: var(--background1);
+            background-color: var(--color3);
             padding: var(--smallMedium);
         }
 
-        header, main, footer {
+        main, footer {
             margin: var(--mediumTiny);
-            border-width: var(smallLarge);
-            background-color: var(--background2);
+            background-color: var(--color2);
             padding: var(--smallMedium);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin: var(--mediumTiny);
+            border: var(--smallLarge) var(--frame) var(--color1);
+            padding: var(--smallMedium);
+            background-color: var(--color2);
+          
+            p {
+              font-family: 'Judson', sans-serif;
+              font-size: var(--mediumSmall);
+            }     
+        }
+
+        header:hover img {
+            transform: scale(1.1);
         }
 
         main section, main form, main div {
@@ -54,14 +79,19 @@
         h1 {
             margin: var(--smallMedium);
             padding: var(--smallMedium);
-            font-family: 'Jacques Francois Shadow', serif;
-            font-size: var(--largeSmall);
+            font: bold var(--largeSmall) var(--heading1);
         }
 
-        h2, h3, h4, h5, h6 {
+        h2 {
             margin: var(--smallMedium);
             padding: var(--smallMedium);
-            font-family: 'Jacques Francois', serif;
+            font: bold var(--mediumLarge) var(--heading2);
+        }
+
+        h3, h4, h5, h6 {
+            margin: var(--smallMedium);
+            padding: var(--smallMedium);
+            font: bold var(--mediumSmall) var(--heading2);
         }
 
         header p {
@@ -102,12 +132,12 @@
         /* Borders */
             .borderCarve {
                 border-style: var(--in);
-                border-color: var(--border);
+                border-color: var(--color1);
             }
 
             .borderFrame {
                 border-style: var(--frame);
-                border-color: var(--border);
+                border-color: var(--color1);
             }
 
             .borderNone {border-style: hidden;}

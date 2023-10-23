@@ -1,8 +1,10 @@
 # The Chronolecticon
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Technologies](#technologies)
+- [Features](#features)
 - [Installation](#installation)
 - [User Journey](#user-journey)
 - [HTML Structure](#html-structure)
@@ -25,6 +27,12 @@
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) 
+
+---
+
+## Features
+
+- FavIcon
 
 ---
 
@@ -114,7 +122,7 @@ The JavaScript file (`script.js`) provides the functionality for the application
 
 ## Testing
 
-It appears that there is a testbed section in the JavaScript code, but it is currently commented out. You can use this section to test the functionality of the application by calling the `pullFromAPI` and `pushToPage` functions with different languages and text.
+There is a testbed section in the JavaScript code. You can use this section to test the functionality of the application by calling the `pullFromAPI` and `pushToPage` functions with different languages and text.
 
 ---
 
