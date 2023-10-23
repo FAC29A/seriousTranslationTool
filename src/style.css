@@ -1,12 +1,12 @@
-/* Debug */
-    /* * {border: 0.var(--mediumTiny) dashed black;} */
-
 /* Variables */
     :root {
         /* Colours */
-            --color1: burlywood;
-            --color2: antiquewhite;
-            --color3: #fffaf0;
+            --color1A: #deb887;
+            --color1B: #be9867;
+            --color2A: #faebd7;
+            --color2B: #dacbb7;
+            --color3A: #fffaf0;
+            --color3B: #cfcac0;
         
         /* Fonts */
             --heading1: 'Jacques Francois Shadow', serif;
@@ -40,30 +40,19 @@
     /* Sections */
         body {
             margin: 0;
-            border-width: var(smallLarge);
-            background-color: #f5f5ee;
-            background-image: linear-gradient(to bottom, #f5f5ee 0%, #f4f4ed 100%);
-            background-attachment: fixed;
+            border: var(--smallLarge) var(--jut) var(--color1A);
             padding: 0;
+
+            background-image: linear-gradient(to bottom, var(--color3A) 0%, var(--color3B) 100%);
+            background-attachment: fixed;
         }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        header, main, footer {
+            margin: var(--smallMedium);
+            border: var(--smallLarge) var(--frame) var(--color1A);
+            padding: var(--smallMedium);
 
-            margin: var(--smallSmall);
-            border: var(--smallLarge) var(--frame) var(--color1);
-            padding: var(--smallLarge);
-            background-color: var(--color2);
-          
-               
-        }
-
-        main, footer {
-            margin: var(--smallSmall);
-            background-color: var(--color2);
-            padding: var(--smallLarge);
+            background-color: var(--color2A);
         }
 
         section, form, div {
@@ -76,33 +65,35 @@
             margin: var(--smallMedium);
             padding: var(--smallMedium);
             font: bold var(--largeSmall) var(--heading1);
+            text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
         }
         h2 {
             margin: var(--smallMedium);
             padding: var(--smallMedium);
             font: bold var(--mediumLarge) var(--heading2);
+            text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
         }
         h3, h4, h5, h6 {
             margin: var(--smallMedium);
             padding: var(--smallMedium);
             font: bold var(--mediumSmall) var(--heading2);
+            text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
         }
 
-        header p {
+        p {
             margin: var(--smallMedium);
             padding: var(--smallMedium);
             font: var(--mediumMedium) var(--paragraph);
+            text-align: justify;
         }
-        main p {
-            margin: var(--smallMedium);
-            padding: var(--smallMedium);
-            font: var(--mediumMedium) var(--paragraph);
-        }
+
         footer p {
             font: var(--minor);
         }
 
-        select, option, input {font-family: 'Judson', sans-serif;}
+        select, option, input {
+            font-family: 'Judson', sans-serif;
+        }
 
     /* Images */
         header:hover img {
@@ -130,15 +121,18 @@
         /* Borders */
             .borderCarve {
                 border-style: var(--in);
-                border-color: var(--color1);
+                border-color: var(--color1A);
             }
 
             .borderFrame {
                 border-style: var(--frame);
-                border-color: var(--color1);
+                border-width: var(--smallSmall);
+                border-color: rgba(0, 0, 0, 0.2);
             }
 
-            .borderNone {border-style: hidden;}
+            .borderNone {
+                border-style: hidden;
+            }
 
     /* Forms */
         .form__label {
@@ -149,32 +143,37 @@
             display: block;
             transition: all 0.3s;
             transform: translateY(0rem);
-            }
+        }
             
         .form__input {
-        font-family: 'Judson', sans-serif;
-        color: #333;
-        font-size: 1.2rem;
+            font-family: 'Judson', sans-serif;
+            color: #333;
+            font-size: 1.2rem;
+            
             margin: 0 auto;
-        padding: 1.5rem 2rem;
-        border-radius: 0.2rem;
-        background-color: rgb(255, 255, 255);
-        border: none;
-        width: 90%;
-        display: block;
-        border-bottom: 0.3rem solid transparent;
-        transition: all 0.3s;
+            padding: 1.5rem 2rem;
+            
+            border-radius: 0.2rem;
+            background-color: rgb(255, 255, 255);
+            border: none;
+            width: 90%;
+            display: block;
+            border-bottom: 0.3rem solid transparent;
+            border-bottom-color: rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
         }
             
         .form__input:placeholder-shown + .form__label {
-        opacity: 0;
-        visibility: hidden;
-        -webkit-transform: translateY(-4rem);
-        transform: translateY(-4rem);
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transform: translateY(-4rem);
+            transform: translateY(-4rem);
         }
 
 
 /* ID */
     #loading-message {
         text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
     }
