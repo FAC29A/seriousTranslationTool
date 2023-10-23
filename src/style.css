@@ -144,3 +144,7 @@
     -webkit-transform: translateY(-4rem);
     transform: translateY(-4rem);
     }
+
+    #loading-message {
+        text-align: center;
+    }
