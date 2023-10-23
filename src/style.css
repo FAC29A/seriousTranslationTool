@@ -6,13 +6,13 @@
         /* Colours */
             --color1: burlywood;
             --color2: antiquewhite;
-            --color3: floralwhite;
+            --color3: #fffaf0;
         
         /* Fonts */
             --heading1: 'Jacques Francois Shadow', serif;
             --heading2: 'Jacques Francois', serif;
-            --paragraph: 'Judson', sans-serif;
-            --minor: 'Italiana', sans-serif;
+            --paragraph: 'Judson', serif;
+            --minor: 'Italiana', serif;
 
 
         /* Borders */
@@ -41,7 +41,9 @@
         body {
             margin: 0;
             border-width: var(smallLarge);
-            background-color: var(--color3);
+            background-color: #f5f5ee;
+            background-image: linear-gradient(to bottom, #f5f5ee 0%, #f4f4ed 100%);
+            background-attachment: fixed;
             padding: 0;
         }
 
@@ -50,18 +52,18 @@
             justify-content: space-between;
             align-items: center;
 
-            margin: 0;
+            margin: var(--smallSmall);
             border: var(--smallLarge) var(--frame) var(--color1);
-            padding: var(--mediumTiny);
+            padding: var(--smallLarge);
             background-color: var(--color2);
           
                
         }
 
         main, footer {
-            margin: 0;
+            margin: var(--smallSmall);
             background-color: var(--color2);
-            padding: var(--mediumTiny);
+            padding: var(--smallLarge);
         }
 
         section, form, div {
@@ -119,7 +121,7 @@
                 justify-content: space-between;
                 align-items: center;
             }
-            .parent > * {margin: var(--smallMedium)}
+            .parent > div {margin: var(--smallMedium)}
             .childBully {flex: 1 0 auto}
             .childDull {flex: 1 1 auto;}
             .childWhingey {flex: 0 1 auto}
