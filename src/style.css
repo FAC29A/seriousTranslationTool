@@ -4,9 +4,16 @@
 /* Variables */
     :root {
         /* Colours */
-            --border: burlywood;
-            --background1: floralwhite;
-            --background2: antiquewhite;
+            --color1: burlywood;
+            --color2: antiquewhite;
+            --color3: floralwhite;
+        
+        /* Fonts */
+            --heading1: 'Jacques Francois Shadow', serif;
+            --heading2: 'Jacques Francois', serif;
+            --paragraph: 'Judson', sans-serif;
+            --minor: 'Italiana', sans-serif;
+
 
         /* Borders */
             /* Styles
@@ -17,69 +24,88 @@
             
             /* Widths
                 Set within Elements */
-                --smallSmall: 0.2rem;
-                --smallMedium: 0.4rem;
-                --smallLarge: 0.6rem;
+                --smallSmall: 0.25rem;
+                --smallMedium: 0.5rem;
+                --smallLarge: 0.75rem;
                 --mediumTiny: 1.0rem;
-                --mediumSmall: 1.2rem;
-                --mediumMedium: 1.4rem;
-                --mediumLarge: 1.6rem;
-                --largeSmall: 2.2rem;
-                --largeMedium: 2.4rem;
-                --largeLarge: 2.6rem;
+                --mediumSmall: 1.25rem;
+                --mediumMedium: 1.5rem;
+                --mediumLarge: 1.75rem;
+                --largeSmall: 2.25rem;
+                --largeMedium: 2.5rem;
+                --largeLarge: 2.75rem;
     }
 
 /* Elements */
     /* Sections */
         body {
-            margin: var(--mediumTiny);
+            margin: 0;
             border-width: var(smallLarge);
-            background-color: var(--background1);
-            padding: var(--smallMedium);
+            background-color: var(--color3);
+            padding: 0;
         }
 
-        header, main, footer {
-            margin: var(--mediumTiny);
-            border-width: var(smallLarge);
-            background-color: var(--background2);
-            padding: var(--smallMedium);
-        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-        main section, main form, main div {
-            margin: var(--mediumTiny);
+            margin: 0;
+            border: var(--smallLarge) var(--frame) var(--color1);
             padding: var(--mediumTiny);
+            background-color: var(--color2);
+          
+               
+        }
+
+        main, footer {
+            margin: 0;
+            background-color: var(--color2);
+            padding: var(--mediumTiny);
+        }
+
+        section, form, div {
+            margin: 0;
+            padding: var(--smallMedium);
         }
 
     /* Text */
         h1 {
             margin: var(--smallMedium);
             padding: var(--smallMedium);
-            font-family: 'Jacques Francois Shadow', serif;
-            font-size: var(--largeSmall);
+            font: bold var(--largeSmall) var(--heading1);
         }
-
-        h2, h3, h4, h5, h6 {
+        h2 {
             margin: var(--smallMedium);
             padding: var(--smallMedium);
-            font-family: 'Jacques Francois', serif;
+            font: bold var(--mediumLarge) var(--heading2);
+        }
+        h3, h4, h5, h6 {
+            margin: var(--smallMedium);
+            padding: var(--smallMedium);
+            font: bold var(--mediumSmall) var(--heading2);
         }
 
         header p {
             margin: var(--smallMedium);
             padding: var(--smallMedium);
-            font-family: 'Judson', sans-serif;
-            font-size: var(--mediumMedium);
+            font: var(--mediumMedium) var(--paragraph);
         }
         main p {
             margin: var(--smallMedium);
             padding: var(--smallMedium);
-            font-family: 'Judson', sans-serif;
-            font-size: var(--mediumMedium);
+            font: var(--mediumMedium) var(--paragraph);
         }
-        
-        footer p {font-family: Italiana;}
+        footer p {
+            font: var(--minor);
+        }
 
         select, option, input {font-family: 'Judson', sans-serif;}
+
+    /* Images */
+        header:hover img {
+            transform: scale(1.1);
+        }
 
 /* Classes */
     /* Utility */
@@ -102,49 +128,51 @@
         /* Borders */
             .borderCarve {
                 border-style: var(--in);
-                border-color: var(--border);
+                border-color: var(--color1);
             }
 
             .borderFrame {
                 border-style: var(--frame);
-                border-color: var(--border);
+                border-color: var(--color1);
             }
 
             .borderNone {border-style: hidden;}
 
+    /* Forms */
+        .form__label {
+            font-family: 'Judson', sans-serif;
+            font-size: var(--mediumSmall);
+            margin-left: auto;
+            margin-top: auto;
+            display: block;
+            transition: all 0.3s;
+            transform: translateY(0rem);
+            }
+            
+        .form__input {
+        font-family: 'Judson', sans-serif;
+        color: #333;
+        font-size: 1.2rem;
+            margin: 0 auto;
+        padding: 1.5rem 2rem;
+        border-radius: 0.2rem;
+        background-color: rgb(255, 255, 255);
+        border: none;
+        width: 90%;
+        display: block;
+        border-bottom: 0.3rem solid transparent;
+        transition: all 0.3s;
+        }
+            
+        .form__input:placeholder-shown + .form__label {
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transform: translateY(-4rem);
+        transform: translateY(-4rem);
+        }
 
-.form__label {
-    font-family: 'Judson', sans-serif;
-    font-size: var(--mediumSmall);
-    margin-left: auto;
-    margin-top: auto;
-    display: block;
-    transition: all 0.3s;
-    transform: translateY(0rem);
-    }
-    
-    .form__input {
-    font-family: 'Judson', sans-serif;
-    color: #333;
-    font-size: 1.2rem;
-        margin: 0 auto;
-    padding: 1.5rem 2rem;
-    border-radius: 0.2rem;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    width: 90%;
-    display: block;
-    border-bottom: 0.3rem solid transparent;
-    transition: all 0.3s;
-    }
-    
-    .form__input:placeholder-shown + .form__label {
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transform: translateY(-4rem);
-    transform: translateY(-4rem);
-    }
 
+/* ID */
     #loading-message {
         text-align: center;
     }
