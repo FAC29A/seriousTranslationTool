@@ -3,6 +3,7 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Technologies](#technologies)
+- [Installation](#installation)
 - [User Journey](#user-journey)
 - [HTML Structure](#html-structure)
 - [CSS Styling](#css-styling)
@@ -25,6 +26,28 @@
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) 
 
+---
+
+## Installation
+
+To use The Chronolecticon, follow these installation instructions:
+
+1. **Clone the Repository:**
+   - Clone this repository to your local machine using the following command:
+     ```
+     git clone https://github.com/your-username/chronolecticon.git
+     ```
+
+2. **Navigate to the Directory:**
+   - Change your working directory to the cloned repository:
+     ```
+     cd chronolecticon
+     ```
+
+3. **Open in a Browser:**
+   - Open the `index.html` file in your preferred web browser.
+   - The application should load and be ready for use.
+  
 ---
 
 ## User Journey
