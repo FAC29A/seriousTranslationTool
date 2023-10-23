@@ -1,10 +1,22 @@
 # The Chronolecticon
 
-Text go in, other text go out
+## Table of Contents
+- [Introduction](#introduction)
+- [Technologies](#technologies)
+- [User Journey](#user-journey)
+- [HTML Structure](#html-structure)
+- [CSS Styling](#css-styling)
+- [JavaScript Functionality](#javascript-functionality)
+- [Testing](#testing)
+- [API Sources](#api-sources)
 
-## Features
+---
 
-- Translate text into various other semi-legitimate sociolects 
+## Introduction
+
+**The Chronolecticon** is a web application designed to provide a fun and unique linguistic experience. It allows discerning professionals and language enthusiasts to translate text from one "serious" language to another. Whether you want to turn your modern English text into Old English, Pig Latin, Mandalorian, Shakespearean English, or Pirate-speak, The Chronolecticon has you covered.
+
+---
 
 ## Technologies
 
@@ -14,6 +26,93 @@ Text go in, other text go out
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) 
 
 ---
+
+## User Journey
+
+1. **Open the Application**
+   - Visit the web page in your browser.
+
+2. **Input Your Text**
+   - In the "Rustic Verbiage" section, select two languages from the dropdown menus for "Serious Language One" and "Serious Language Two."
+   - Enter the text you want to translate in the "Untranslated Text" input field.
+
+3. **Initiate Translation**
+   - Click the "Translate!" button.
+
+4. **View Translations**
+   - Two translations will appear in the "Refined Parlance" section:
+     - "Translation One" in the left box.
+     - "Translation Two" in the right box.
+
+5. **Explore Translations**
+   - Enjoy exploring the translated versions of your text in different "serious" languages.
+
+6. **Repeat or Reset**
+   - You can repeat the translation process with different text or languages by entering new input and clicking "Translate!" again.
+
+---
+
+## HTML Structure
+
+The HTML file (`index.html`) is structured as follows:
+
+- It consists of a `<head>` section with metadata and links to external resources like stylesheets and scripts.
+- The `<body>` contains the main content of the application, divided into three sections: `header`, `main`, and `footer`.
+- In the `main` section, there are two subsections: `input` and `output`. The `input` section contains the form for language selection and text input. The `output` section displays the translated text.
+- The form allows users to select the source and target languages and provides an input field for the text to be translated.
+- The translations appear in two separate boxes with "Translation One" and "Translation Two" headers.
+
+---
+
+## CSS Styling
+
+The CSS file (`style.css`) defines the styling of the application. It uses CSS variables to manage colors, borders, and layout. Key CSS classes and styles include:
+
+- Border styles and colors for various elements.
+- Text alignment for centering or right-aligning content.
+- Font families and sizes for headings and text.
+- Flexbox layout classes for parent-child relationships.
+- Placeholder label animations for the text input field.
+- Styling for loading messages.
+
+---
+
+## JavaScript Functionality
+
+The JavaScript file (`script.js`) provides the functionality for the application. Key features include:
+
+- Retrieving user input for the source and target languages and the text to be translated.
+- Making API requests to Funtranslations for language translation.
+- Displaying the translations in the designated output boxes.
+- Handling errors and displaying error messages.
+- Using event listeners to trigger translation on form submission.
+
+---
+
+## Testing
+
+It appears that there is a testbed section in the JavaScript code, but it is currently commented out. You can use this section to test the functionality of the application by calling the `pullFromAPI` and `pushToPage` functions with different languages and text.
+
+---
+
+## API Sources
+
+The application uses the Funtranslations API to perform language translations. It constructs URLs based on the selected languages and user input and fetches translated content from the API.
+
+---
+
+Enjoy exploring the diverse linguistic possibilities that The Chronolecticon offers! If you encounter any issues or have suggestions for improvement, please feel free to contribute to the development of this linguistic tool.
+
+---
+
+## Jason and Phoebe's Extended Thought Sandpit
+
+Text go in, other text go out
+
+## Features
+
+- Translate text into various other semi-legitimate sociolects 
+
 
 ## README Checklist
 
