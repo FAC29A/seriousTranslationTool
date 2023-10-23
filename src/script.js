@@ -59,9 +59,7 @@
 
   //Put Stuff on Page
     async function pushToPage(content, box) {
-      // loadingDivs.forEach(div => {
-      //   div.style.display = "none";
-      // })
+      box.innerHTML = "";
       const resultParagraph = document.createElement("p");
       resultParagraph.className = "dummyClass";
       resultParagraph.textContent = content;
