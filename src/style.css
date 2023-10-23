@@ -177,3 +177,52 @@
         font-size: 1.2rem;
         font-weight: bold;
     }
+
+/* Media Queries */
+    /* Mobile */
+    @media (max-width: 576px) {
+        /* Increase font size */
+        body { font-size: 1.2rem; }
+        h1 { font-size: 1.6rem; }
+        h2 { font-size: 1.4rem; }
+        h3, h4, h5, h6 { font-size: 1.2rem; }
+        p { font-size: 1rem; }
+    
+        /* Remove borders */
+        .borderCarve { border: none; }
+        .borderFrame { border: none; }
+    
+        /* Make form elements full-width */
+        select, input { width: 100%; }
+    
+        /* Stack form elements on top of each other */
+        #formSelect1, #formUserText, #formSelect2 {
+        flex-direction: column;
+        }
+    }
+    
+    /* Tablet */
+    @media (min-width: 576px) and (max-width: 768px) {
+        /* Increase font size slightly */
+        body { font-size: 1.4rem; }
+        h1 { font-size: 1.8rem; }
+        h2 { font-size: 1.6rem; }
+        h3, h4, h5, h6 { font-size: 1.4rem; }
+        p { font-size: 1.2rem; }
+    
+        /* Make form elements full-width */
+        select, input { width: 100%; }
+    }
+    
+    /* Desktop */
+    @media (min-width: 768px) {
+        /* Reset font size to default */
+        body { font-size: 1rem; }
+        h1 { font-size: 1.6rem; }
+        h2 { font-size: 1.4rem; }
+        h3, h4, h5, h6 { font-size: 1.2rem; }
+        p { font-size: 1rem; }
+    
+        /* Make form elements full-width */
+        select, input { width: 100%; }
+    }
