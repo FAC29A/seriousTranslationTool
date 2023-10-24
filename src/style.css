@@ -156,7 +156,7 @@
             border-radius: 0.2rem;
             background-color: rgb(255, 255, 255);
             border: none;
-            width: 90%;
+            max-width: 90%;
             display: block;
             border-bottom: 0.3rem solid transparent;
             border-bottom-color: rgba(0, 0, 0, 0.2);
