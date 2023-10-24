@@ -17,7 +17,7 @@
 
 ## Introduction
 
-**The Chronolecticon** is a web application designed to provide a fun and unique linguistic experience. It allows discerning professionals and language enthusiasts to translate text from one "serious" language to another. Whether you want to turn your modern English text into Old English, Pig Latin, Mandalorian, Shakespearean English, or Pirate-speak, The Chronolecticon has you covered.
+**The Chronolecticon** is a ~~nonsense~~ web application designed to ~~make me laugh~~ provide a ~~useless~~ fun & unique linguistic ~~satire~~ experience. It allows discerning professionals & language enthusiasts to translate text from English to another equally serious language. As we say here at Nurpledurp Industries, "_when looking for translated speech, **The Chronolecticon's** your peach_".
 
 ---
 
