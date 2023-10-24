@@ -49,7 +49,7 @@
 //Functions
   //Get Stuff from API
     async function pullFromAPI(languageString, queryString) {
-      const url = rootURL + languageString + ".json?text=" + queryString;
+      const url = `${rootURL}${languageString}.json?text=${queryString}`;
       let translated = await fetch(url)
       .then((response) => response.json())
       .then((responseObject) => responseObject.contents.translated)
@@ -60,11 +60,7 @@
   //Put Stuff on Page
     async function pushToPage(content, box) {
       box.innerHTML = "";
-      const resultParagraph = document.createElement("p");
-      resultParagraph.className = "dummyClass";
-      resultParagraph.textContent = content;
-      
-      box.append(resultParagraph);
+      box.innerHTML = `<p class="dummyClass">${content}</p>`;
       loadingDiv.style.display = "none";
 
     }
