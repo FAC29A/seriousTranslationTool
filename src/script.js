@@ -60,11 +60,12 @@
   //Put Stuff on Page
     async function pushToPage(content, box) {
       box.innerHTML = "";
-      const resultParagraph = document.createElement("p");
-      resultParagraph.className = "dummyClass";
-      resultParagraph.textContent = content;
+      box.innerHTML = `<p class="dummyClass">${content}</p>`;
+      // const resultParagraph = document.createElement("p");
+      // resultParagraph.className = "dummyClass";
+      // resultParagraph.textContent = content;
       
-      box.append(resultParagraph);
+      // box.append(resultParagraph);
       loadingDiv.style.display = "none";
 
     }
