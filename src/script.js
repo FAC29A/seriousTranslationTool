@@ -28,14 +28,19 @@
 
       pushToPage(translated1, container1);
       pushToPage(translated2, container2);
+      
     } catch (error) {
-      // loadingDivs.forEach(div => {
-      //   div.textContent = "Error: " + error.message;
-      // });
-      loadingDiv.innerText = "Error: " + error.message;
+
+      if (error.message && error.message.includes("404")) {
+        loadingDiv.innerText = "Whoops! Alright Professor, that's all your searches for now!"
+      }
+      else {
+      loadingDiv.innerText = "Whoops! Error: " + error.message;
+    }
+
     } finally {
 
-      const hasError = loadingDiv.some(div => div.textContent.startsWith("Error"));
+      const hasError = loadingDiv.some(div => div.textContent.startsWith("Whoops"));
       if (!hasError) {
         loadingDiv.style.display = "none";
       }
