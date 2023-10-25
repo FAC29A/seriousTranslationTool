@@ -48,7 +48,9 @@
         }
 
         header, main, footer {
-            margin: var(--smallMedium);
+            max-width: 95%;
+
+            margin: var(--smallMedium) auto;
             border: var(--smallLarge) var(--frame) var(--color1A);
             padding: var(--smallMedium);
 
@@ -56,7 +58,8 @@
         }
 
         section, form, div {
-            margin: 0;
+            max-width: 95%;
+            margin: 0 auto;
             padding: var(--smallMedium);
         }
 
@@ -91,7 +94,7 @@
             font: var(--minor);
         }
 
-        select, option, input {
+        select, option {
             font-family: 'Judson', sans-serif;
         }
 
@@ -109,11 +112,15 @@
         /* Layout */
             .parent {
                 display: flex;
-                justify-content: space-between;
+                flex-flow: row wrap;
+                justify-content: space-around;
                 align-items: center;
             }
-            .parent > div {margin: var(--smallMedium)}
-            .childBully {flex: 1 0 auto}
+            .parent > div {
+                min-width: fit-content;
+                margin: var(--smallMedium);
+            }
+            .childBully {flex: 1 1 auto}
             .childDull {flex: 1 1 auto;}
             .childWhingey {flex: 0 1 auto}
             .childScary {flex: 0 0 auto}
@@ -156,9 +163,11 @@
             border-radius: 0.2rem;
             background-color: rgb(255, 255, 255);
             border: none;
-            max-width: 90%;
+            max-width: 75%;
             display: block;
             border-bottom: 0.3rem solid transparent;
+            
+            /*todo find out if there's any way to combine hex values with alpha */
             border-bottom-color: rgba(0, 0, 0, 0.2);
             transition: all 0.3s;
         }
@@ -178,41 +187,41 @@
         font-weight: bold;
     }
 
+    #formUserText {
+        order: -1;
+    }
+
 /* Media Queries */
-    /* Mobile */
-    @media (max-width: 576px) {
-        /* Increase font size */
-        body { font-size: 1.2rem; }
-        h1 { font-size: 1.6rem; }
-        h2 { font-size: 1.4rem; }
-        h3, h4, h5, h6 { font-size: 1.2rem; }
-        p { font-size: 1rem; }
-    
-        /* Remove borders */
-        .borderCarve { border: none; }
-        .borderFrame { border: none; }
-    
-        /* Make form elements full-width */
-        select, input { width: 100%; }
-    
-        /* Stack form elements on top of each other */
-        #formSelect1, #formUserText, #formSelect2 {
-        flex-direction: column;
+    /* Non-Desktop */
+        /* Mobile */
+        @media (max-width: 576px) {
+            /* Increase font size */
+            body { font-size: 1.2rem; }
+            h1 { font-size: 1.6rem; }
+            h2 { font-size: 1.4rem; }
+            h3, h4, h5, h6 { font-size: 1.2rem; }
+            p { font-size: 1rem; }
+        
+            /* Remove borders */
+            .borderCarve { border: none; }
+            .borderFrame { border: none; }
+        
+            /* Make form elements full-width */
+            select, input { width: 100%; }
         }
-    }
-    
-    /* Tablet */
-    @media (min-width: 576px) and (max-width: 768px) {
-        /* Increase font size slightly */
-        body { font-size: 1.4rem; }
-        h1 { font-size: 1.8rem; }
-        h2 { font-size: 1.6rem; }
-        h3, h4, h5, h6 { font-size: 1.4rem; }
-        p { font-size: 1.2rem; }
-    
-        /* Make form elements full-width */
-        select, input { width: 100%; }
-    }
+        
+        /* Tablet */
+        @media (min-width: 576px) and (max-width: 768px) {
+            /* Increase font size slightly */
+            body { font-size: 1.4rem; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.6rem; }
+            h3, h4, h5, h6 { font-size: 1.4rem; }
+            p { font-size: 1.2rem; }
+        
+            /* Make form elements full-width */
+            select, input { width: 100%; }
+        }
     
     /* Desktop */
     @media (min-width: 768px) {
@@ -222,6 +231,8 @@
         h2 { font-size: 1.4rem; }
         h3, h4, h5, h6 { font-size: 1.2rem; }
         p { font-size: 1rem; }
+
+        #formUserText {order: 0;}
     
         /* Make form elements full-width */
         select, input { width: 100%; }
