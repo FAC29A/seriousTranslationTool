@@ -12,6 +12,7 @@
 //Event Listeners
   //Get User Input
     form.addEventListener("submit", async (event) => {
+
       event.preventDefault();
       loadingDiv.style.display = "block";
 
@@ -20,6 +21,14 @@
       const queryString = formDataObject.originalTextInput.toString();
       const languageString1 = formDataObject.language1Input.toString();
       const languageString2 = formDataObject.language2Input.toString();
+
+      if (
+        formDataObject.originalTextInput.trim() === "" ||
+        formDataObject.language1Input.trim() === "" ||
+        formDataObject.language2Input.trim() === ""
+      ) {
+        loadingDiv.innerText = "Please fill in all fields!";
+      } else {
 
       try {
 
@@ -47,7 +56,7 @@
       
     }
 
-    });
+    }});
 
 
 
